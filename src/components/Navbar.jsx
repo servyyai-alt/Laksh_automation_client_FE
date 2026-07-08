@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import logo from '../assets/logo.png';
 
 const navItems = [
   { label: 'Home', href: '#home' },
@@ -44,13 +45,9 @@ export default function Navbar() {
           {/* Logo */}
           <a href="#home" onClick={(e) => handleNav(e, '#home')} className="flex items-center gap-3 group">
             <div className="relative">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center shadow-glow group-hover:scale-110 transition-transform duration-300">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-                  <path d="M12 2C12 2 4 8.5 4 14a8 8 0 0016 0C20 8.5 12 2 12 2Z" fill="white" opacity="0.9"/>
-                  <path d="M12 8C12 8 8 11.5 8 14a4 4 0 008 0C16 11.5 12 8 12 8Z" fill="white" opacity="0.5"/>
-                </svg>
-              </div>
-              <div className="absolute -inset-1 rounded-xl bg-primary-500/20 blur-sm group-hover:bg-primary-500/40 transition-all duration-300" />
+             
+              <img src={logo} alt="Laksh Automations Logo" className="w-15 h-12 rounded-xl shadow-glow group-hover:scale-110 transition-transform duration-300" />
+              
             </div>
             <div>
               <div className="font-display font-bold text-white text-lg leading-tight">LAKSH</div>
