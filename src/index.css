@@ -1,0 +1,263 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: #0077FF;
+    --secondary: #00B4D8;
+    --accent: #48CAE4;
+    --bg: #F4FBFF;
+    --dark: #0A1628;
+    --navy: #0D2347;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: var(--bg);
+    color: #1a2744;
+    overflow-x: hidden;
+  }
+
+  * { box-sizing: border-box; }
+}
+
+@layer components {
+  /* Glass card */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 119, 255, 0.15);
+    box-shadow: 0 8px 32px rgba(0, 119, 255, 0.08);
+  }
+
+  .glass-card-dark {
+    background: rgba(13, 35, 71, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(72, 202, 228, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Aqua button */
+  .btn-aqua {
+    background: linear-gradient(135deg, #0077FF, #00B4D8);
+    color: white;
+    padding: 12px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 119, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    
+  }
+
+  .btn-aqua::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #00B4D8, #48CAE4);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  /* .btn-aqua:hover::before { opacity: 1 } */
+  .btn-aqua:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0, 119, 255, 0.5); }
+  .btn-aqua:active { transform: translateY(0); }
+
+  .btn-outline-aqua {
+    background: transparent;
+    color: #0077FF;
+    padding: 11px 31px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    border: 2px solid #0077FF;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .btn-outline-aqua:hover {
+    background: #0077FF;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 119, 255, 0.3);
+  }
+
+  /* Section heading */
+  .section-heading {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: clamp(28px, 4vw, 42px);
+    color: var(--dark);
+    line-height: 1.2;
+  }
+
+  .section-subheading {
+    font-size: 16px;
+    color: #4a6190;
+    line-height: 1.7;
+    max-width: 580px;
+  }
+
+  /* Badge */
+  .badge-water {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(0, 119, 255, 0.1);
+    color: #0077FF;
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 600;
+    border: 1px solid rgba(0, 119, 255, 0.2);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  /* Water wave container */
+  .wave-container {
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Input fields */
+  .form-input {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1.5px solid rgba(0, 119, 255, 0.2);
+    border-radius: 12px;
+    background: white;
+    font-size: 15px;
+    color: #1a2744;
+    transition: all 0.3s ease;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+  }
+
+  .form-input:focus {
+    border-color: #0077FF;
+    box-shadow: 0 0 0 4px rgba(0, 119, 255, 0.1);
+  }
+
+  .form-input::placeholder { color: #9ab0d0; }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #F4FBFF; }
+  ::-webkit-scrollbar-thumb { background: linear-gradient(#0077FF, #00B4D8); border-radius: 3px; }
+
+  /* Product card */
+  .product-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 119, 255, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 20px rgba(0, 119, 255, 0.05);
+  }
+
+  .product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(0, 119, 255, 0.2);
+    border-color: rgba(0, 119, 255, 0.3);
+  }
+
+  /* Stat card */
+  .stat-card {
+    background: white;
+    border-radius: 20px;
+    padding: 32px 24px;
+    text-align: center;
+    border: 1px solid rgba(0, 119, 255, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .stat-card:hover { box-shadow: 0 12px 40px rgba(0, 119, 255, 0.15); }
+
+  /* Nav link */
+  .nav-link {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.85);
+    transition: color 0.2s ease;
+    position: relative;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #0077FF, #00B4D8);
+    transition: width 0.3s ease;
+    border-radius: 2px;
+  }
+
+  .nav-link:hover { color: white; }
+  .nav-link:hover::after { width: 100%; }
+
+  /* Floating bubbles */
+  .bubble {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(0, 180, 216, 0.1);
+    border: 1px solid rgba(72, 202, 228, 0.2);
+    animation: bubble 8s ease-in infinite;
+  }
+
+  /* WhatsApp button */
+  .whatsapp-btn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+
+  .whatsapp-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 30px rgba(37, 211, 102, 0.5);
+  }
+
+  /* Section padding */
+  .section-py { padding: 80px 0; }
+
+  @media (max-width: 768px) {
+    .section-py { padding: 60px 0; }
+  }
+}
+
+/* Floating bubbles animation override */
+@keyframes bubble {
+  0% { transform: translateY(0) scale(0.8); opacity: 0; }
+  10% { opacity: 0.6; }
+  90% { opacity: 0.2; }
+  100% { transform: translateY(-80vh) scale(1.2); opacity: 0; }
+}
