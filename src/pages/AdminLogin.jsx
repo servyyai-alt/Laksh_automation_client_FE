@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { motion } from 'framer-motion';
 import toast from 'react-hot-toast';
 import { useAuth } from '../context/AuthContext';
+import Seo from '../components/Seo';
 
 export default function AdminLogin() {
   const [loading, setLoading] = useState(false);
@@ -26,7 +27,9 @@ export default function AdminLogin() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4" style={{ background: 'linear-gradient(135deg, #0A1628, #0D2347, #0077FF)' }}>
+    <>
+      <Seo title="Admin Login" description="Sign in to manage Laksh Automations products and enquiries." canonical="https://www.lakshautomations.com/admin/login" />
+      <div className="min-h-screen flex items-center justify-center p-4" style={{ background: 'linear-gradient(135deg, #0A1628, #0D2347, #0077FF)' }}>
       {/* Bubbles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(8)].map((_, i) => (
@@ -141,5 +144,6 @@ export default function AdminLogin() {
         </p>
       </motion.div>
     </div>
+    </>
   );
 }

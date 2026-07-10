@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { motion } from "framer-motion";
 import logo from '../assets/logo.png';
 
@@ -84,7 +85,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-5">
-             <img src={logo} alt="Laksh Automations Logo" className="w-15 h-12 rounded-xl shadow-glow group-hover:scale-110 transition-transform duration-300" />
+             <img src={logo} alt="Laksh Automations Logo" loading="lazy" className="w-15 h-12 rounded-xl shadow-glow group-hover:scale-110 transition-transform duration-300" />
               <div>
                 <div className="font-display font-bold text-white text-lg leading-tight">
                   LAKSH
@@ -169,9 +170,9 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-white font-display font-semibold text-sm mb-5 uppercase tracking-wider">
+            <h3 className="text-white font-display font-semibold text-sm mb-5 uppercase tracking-wider">
               Quick Links
-            </h4>
+            </h3>
             <ul className="space-y-2.5">
               {quickLinks.map((link) => (
                 <li key={link.label}>
@@ -199,9 +200,9 @@ export default function Footer() {
 
           {/* Products */}
           <div>
-            <h4 className="text-white font-display font-semibold text-sm mb-5 uppercase tracking-wider">
+            <h3 className="text-white font-display font-semibold text-sm mb-5 uppercase tracking-wider">
               Our Products
-            </h4>
+            </h3>
             <ul className="space-y-2.5">
               {products.map((p) => (
                 <li key={p}>
@@ -222,9 +223,9 @@ export default function Footer() {
 
           {/* CTA + Review */}
           <div>
-            <h4 className="text-white font-display font-semibold text-sm mb-5 uppercase tracking-wider">
+            <h3 className="text-white font-display font-semibold text-sm mb-5 uppercase tracking-wider">
               Get In Touch
-            </h4>
+            </h3>
             <p className="text-white/60 text-sm mb-5 leading-relaxed">
               Need help choosing the right product? Our experts are just a call
               away.
@@ -265,20 +266,8 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Keywords for SEO */}
-        <div
-          className="mb-8 p-4 rounded-xl"
-          style={{ background: "rgba(255,255,255,0.03)" }}
-        >
-          <p className="text-white/30 text-xs leading-relaxed text-center">
-            Automatic Water Level Controller | Water Pump Controller
-            Manufacturer Coimbatore | Wireless Water Level Controller | Tank
-            Overflow Prevention System | Borewell Protection System | Motor
-            Protection Controller | Industrial Water Automation | Agricultural
-            Pump Controller | Smart Water Management System | Digital Water
-            Level Indicator | Three Phase Pump Controller | Single Phase Pump
-            Controller
-          </p>
+        <div className="sr-only" aria-hidden="true">
+          Automatic Water Level Controller, Water Pump Controller Manufacturer Coimbatore, Wireless Water Level Controller, Tank Overflow Prevention System, Borewell Protection System, Motor Protection Controller, Industrial Water Automation, Agricultural Pump Controller, Smart Water Management System, Digital Water Level Indicator, Three Phase Pump Controller, Single Phase Pump Controller
         </div>
 
         {/* Bottom bar */}
@@ -287,12 +276,12 @@ export default function Footer() {
             © {new Date().getFullYear()} Laksh Automations. All rights reserved.
             Made with ❤️ in Coimbatore, Tamil Nadu, India.
           </p>
-          <div className="flex items-center gap-1">
-            <span className="text-white/30 text-xs">Powered by</span>
-            <span className="text-secondary-500 text-xs font-medium">
-              LEAST ACTION COMPANY
-            </span>
-            <span className="text-white/30 text-xs">🇮🇳</span>
+          <div className="flex items-center gap-4">
+            <Link to="/terms" className="text-white/40 hover:text-white text-xs transition-colors duration-200">Terms & Conditions</Link>
+            <span className="text-white/20 text-xs">|</span>
+            <Link to="/privacy" className="text-white/40 hover:text-white text-xs transition-colors duration-200">Privacy Policy</Link>
+            <span className="text-white/20 text-xs">|</span>
+            <span className="text-white/30 text-xs">Powered by LEAST ACTION COMPANY 🇮🇳</span>
           </div>
         </div>
       </div>

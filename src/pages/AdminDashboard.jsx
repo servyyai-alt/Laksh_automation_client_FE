@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import toast from 'react-hot-toast';
 import { useAuth } from '../context/AuthContext';
 import API from '../utils/api';
+import Seo from '../components/Seo';
 
 const TABS = ['Dashboard', 'Products', 'Enquiries'];
 
@@ -225,7 +226,9 @@ export default function AdminDashboard() {
   };
 
   return (
-    <div className="min-h-screen" style={{ background: '#F4FBFF' }}>
+    <>
+      <Seo title="Admin Dashboard" description="Manage products and enquiries for Laksh Automations." noindex />
+      <div className="min-h-screen" style={{ background: '#F4FBFF' }}>
       {/* Header */}
       <div style={{ background: 'linear-gradient(135deg, #0A1628, #0D2347)' }} className="border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -483,5 +486,6 @@ export default function AdminDashboard() {
         )}
       </AnimatePresence>
     </div>
+    </>
   );
 }
