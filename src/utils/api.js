@@ -1,7 +1,24 @@
 import axios from 'axios';
 
+const getBaseUrl = () => {
+  const explicitUrl = import.meta.env.VITE_API_URL;
+  if (explicitUrl) return explicitUrl;
+
+  if (typeof window !== 'undefined') {
+    const { hostname, protocol } = window.location;
+
+    if (hostname.endsWith('.vercel.app')) {
+      // Heuristic for separate frontend/backend Vercel deployments.
+      const apiHost = hostname.replace('.vercel.app', '-be.vercel.app');
+      return `${protocol}//${apiHost}/api`;
+    }
+  }
+
+  return '/api';
+};
+
 const API = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || '/api',
+  baseURL: getBaseUrl(),
   timeout: 10000
 });
 
