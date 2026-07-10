@@ -44,7 +44,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16 lg:h-18">
           {/* Logo */}
           <a href="#home" onClick={(e) => handleNav(e, '#home')} className="flex items-center gap-3 group">
-            <div className="relative">
+            <div className="relative bg-white p-1 rounded-xl shadow-glow">
              
               <img src={logo} alt="Laksh Automations Logo" className="w-15 h-12 rounded-xl shadow-glow group-hover:scale-110 transition-transform duration-300" />
               

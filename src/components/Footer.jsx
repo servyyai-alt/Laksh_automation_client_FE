@@ -84,8 +84,10 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-3 mb-5">
-             <img src={logo} alt="Laksh Automations Logo" loading="lazy" className="w-15 h-12 rounded-xl shadow-glow group-hover:scale-110 transition-transform duration-300" />
+            <div className="flex items-center gap-3 mb-5 ">
+              <div className="relative bg-white p-1 rounded-xl shadow-glow">
+                <img src={logo} alt="Laksh Automations Logo" loading="lazy" className="w-15 h-12 rounded-xl shadow-glow group-hover:scale-110 transition-transform duration-300" />
+              </div>
               <div>
                 <div className="font-display font-bold text-white text-lg leading-tight">
                   LAKSH
