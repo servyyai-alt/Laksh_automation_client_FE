@@ -3,52 +3,52 @@ import { useInView } from 'react-intersection-observer';
 
 const reasons = [
   {
-    icon: '🏆',
-    title: 'High Quality Manufacturing',
-    desc: 'ISO-compliant manufacturing process with rigorous quality testing at every stage. Each product passes multiple quality checks before dispatch.',
-    highlight: 'Quality Certified'
+    icon: '🧠',
+    title: 'Strategy First',
+    desc: 'We start by understanding the process, the bottlenecks, and the business outcome you want.',
+    highlight: 'Business Led'
   },
   {
     icon: '⚙️',
-    title: 'Advanced Technology',
-    desc: 'State-of-the-art microcontroller-based designs with built-in intelligence for smart water management and motor protection.',
-    highlight: 'Smart Technology'
+    title: 'Modern Stack',
+    desc: 'We design automations that fit the tools you already use, including CRM, WhatsApp, email, and forms.',
+    highlight: 'Integrated'
   },
   {
     icon: '🔧',
-    title: 'Easy Installation',
-    desc: 'Plug-and-play design with step-by-step manuals. Most products can be installed without professional help in under 30 minutes.',
-    highlight: 'DIY Friendly'
+    title: 'Production Ready',
+    desc: 'We think through retries, logging, handoff logic, and maintainability before launch.',
+    highlight: 'Reliable'
   },
   {
     icon: '📞',
-    title: 'Expert Technical Support',
-    desc: 'Dedicated support team available for pre-sales consultation, installation guidance, and after-sales service throughout India.',
-    highlight: '24/7 Support'
+    title: 'Expert Support',
+    desc: 'We stay involved through implementation so your team can adopt the automation smoothly.',
+    highlight: 'Guided'
   },
   {
     icon: '⚡',
-    title: 'Fast Service',
-    desc: 'Quick order processing with fast shipping across Tamil Nadu and India. Replacement parts and warranty service processed within 48 hours.',
-    highlight: '48hr Response'
+    title: 'Fast Delivery',
+    desc: 'We move quickly from discovery to launch so you see value sooner.',
+    highlight: 'Quick Launch'
   },
   {
     icon: '💰',
-    title: 'Affordable Pricing',
-    desc: 'Direct manufacturer pricing without middlemen. Premium quality water automation products at the most competitive prices in India.',
-    highlight: 'Best Price'
+    title: 'Clear Scope',
+    desc: 'You get a practical proposal focused on outcomes, not vague automation promises.',
+    highlight: 'Transparent'
   },
   {
     icon: '😊',
-    title: 'Customer Satisfaction',
-    desc: '10,000+ satisfied customers across India. Our products back up our promise — 97% of buyers would recommend Laksh Automations.',
-    highlight: '97% Happy'
+    title: 'Better Conversations',
+    desc: 'AI chatbots and agents help you reply consistently and professionally.',
+    highlight: 'Always On'
   },
   {
     icon: '🇮🇳',
-    title: 'Made in India',
-    desc: 'Proudly designed and manufactured in Coimbatore, Tamil Nadu. Supporting the Make in India initiative with homegrown innovation.',
-    highlight: 'India Made'
+    title: 'Built in India',
+    desc: 'We are based in Coimbatore and build solutions for Indian business workflows.',
+    highlight: 'India First'
   }
 ];
 
@@ -66,10 +66,10 @@ export default function WhyChooseUs() {
         >
           <div className="badge-water mb-4 mx-auto w-fit">Why Choose Us</div>
           <h2 className="section-heading mb-4">
-            Why <span style={{ color: '#0077FF' }}>10,000+</span> Customers Trust Us
+            Why Businesses Trust <span style={{ color: '#0077FF' }}>Laksh Automations</span>
           </h2>
           <p className="section-subheading mx-auto text-center">
-            From product design to after-sales support — every touchpoint at Laksh Automations is crafted for your satisfaction.
+            We build automation around real workflows, real people, and real business goals.
           </p>
         </motion.div>
 

@@ -58,7 +58,6 @@ export default function Seo({
       <meta property="og:image:alt" content={pageTitle} />
 
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content="@LakshAutomations" />
       <meta name="twitter:title" content={pageTitle} />
       <meta name="twitter:description" content={pageDesc} />
       <meta name="twitter:image" content={image} />

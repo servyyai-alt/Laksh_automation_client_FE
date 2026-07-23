@@ -3,23 +3,23 @@ import { motion } from "framer-motion";
 import logo from '../assets/logo.png';
 
 const products = [
-  "L10SS Single Phase Controller",
-  "L30SS Three Phase Controller",
-  "Wireless Water Level Controller",
-  "Borewell Dry Run Protection",
-  "Digital Water Level Indicator",
-  "GSM Mobile Pump Controller",
-  "IoT Smart Water Controller",
-  "Agricultural Pump Controller",
+  { label: 'AI Automation', href: '/services/ai-automation' },
+  { label: 'AI Agents', href: '/services/ai-agents' },
+  { label: 'Workflow Automation', href: '/services/workflow-automation' },
+  { label: 'WhatsApp Automation', href: '/services/whatsapp-automation' },
+  { label: 'CRM Automation', href: '/services/crm-automation' },
+  { label: 'AI Chatbots', href: '/services/ai-chatbots' },
+  { label: 'Business Process Automation', href: '/services/business-process-automation' },
+  { label: 'Custom AI Solutions', href: '/services/custom-ai-solutions' }
 ];
 
 const quickLinks = [
   { label: "Home", href: "#home" },
   { label: "About Us", href: "#about" },
-  { label: "Products", href: "#products" },
-  { label: "Applications", href: "#applications" },
+  { label: "Services", href: "/services" },
+  { label: "Use Cases", href: "#use-cases" },
   { label: "Why Choose Us", href: "#why-us" },
-  { label: "Testimonials", href: "#testimonials" },
+  { label: "Results", href: "#results" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -86,7 +86,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-5 ">
               <div className="relative bg-white p-1 rounded-xl shadow-glow">
-                <img src={logo} alt="Laksh Automations Logo" loading="lazy" className="w-15 h-12 rounded-xl shadow-glow group-hover:scale-110 transition-transform duration-300" />
+                <img src={logo} alt="Laksh Automations logo" width="60" height="40" loading="lazy" decoding="async" className="w-15 h-12 rounded-xl shadow-glow group-hover:scale-110 transition-transform duration-300" />
               </div>
               <div>
                 <div className="font-display font-bold text-white text-lg leading-tight">
@@ -98,9 +98,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-white/60 text-sm leading-relaxed mb-5">
-              India's trusted automatic water level controller manufacturer.
-              Smart water management solutions engineered in Coimbatore, Tamil
-              Nadu.
+              Laksh Automations helps businesses automate workflows using AI Agents, WhatsApp Automation, CRM integrations, AI Chatbots, and custom AI solutions.
             </p>
             <div className="space-y-2">
               <a
@@ -179,8 +177,8 @@ export default function Footer() {
               {quickLinks.map((link) => (
                 <li key={link.label}>
                   <a
-                    href={link.href}
-                    onClick={(e) => handleNav(e, link.href)}
+                  href={link.href}
+                  onClick={link.href.startsWith('#') ? (e) => handleNav(e, link.href) : undefined}
                     className="text-white/60 text-sm hover:text-secondary-400 transition-colors duration-200 flex items-center gap-2"
                   >
                     <span className="text-primary-500 text-xs">›</span>
@@ -209,14 +207,13 @@ export default function Footer() {
               {products.map((p) => (
                 <li key={p}>
                   <a
-                    href="#products"
-                    onClick={(e) => handleNav(e, "#products")}
-                    className="text-white/60 text-sm hover:text-secondary-400 transition-colors duration-200 flex items-start gap-2"
-                  >
+                  href={p.href}
+                  className="text-white/60 text-sm hover:text-secondary-400 transition-colors duration-200 flex items-start gap-2"
+                >
                     <span className="text-secondary-500 text-xs mt-0.5 flex-shrink-0">
                       ›
                     </span>
-                    {p}
+                    {p.label}
                   </a>
                 </li>
               ))}
@@ -229,8 +226,7 @@ export default function Footer() {
               Get In Touch
             </h3>
             <p className="text-white/60 text-sm mb-5 leading-relaxed">
-              Need help choosing the right product? Our experts are just a call
-              away.
+              Need help choosing the right automation path? Our experts are just a call away.
             </p>
             <a
               href="tel:+918807500321"
@@ -239,7 +235,7 @@ export default function Footer() {
               Call Now
             </a>
             <a
-              href="https://wa.me/918807500321?text=Hello%20Laksh%20Automations%2C%20I%20need%20product%20information."
+              href="https://wa.me/918807500321?text=Hello%20Laksh%20Automations%2C%20I%20need%20automation%20information."
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 w-full py-3 px-4 rounded-full text-sm font-semibold transition-all duration-300"

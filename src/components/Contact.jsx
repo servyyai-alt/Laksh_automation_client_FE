@@ -5,22 +5,15 @@ import { useInView } from 'react-intersection-observer';
 import toast from 'react-hot-toast';
 import API from '../utils/api';
 
-const productOptions = [
-  'AUTO GUN + JET Automatic Water Pump Controller',
-  'L10SS Single Phase Automatic Water Level Controller',
-  'L30SS Three Phase Automatic Water Level Controller',
-  'Wireless Water Level Controller',
-  'Borewell Dry Run Protection System',
-  'Digital Water Level Indicator',
-  'Single Phase Motor Protection Panel',
-  'Three Phase Motor Protection Panel',
-  'Underground Sump Automation Controller',
-  'Apartment Water Automation System',
-  'Industrial Water Automation System',
-  'Agricultural Pump Automation Controller',
-  'Smart IoT Water Level Controller',
-  'GSM Mobile Pump Controller',
-  'Customized Automation Solutions',
+const serviceOptions = [
+  'AI Automation',
+  'AI Agents',
+  'Workflow Automation',
+  'WhatsApp Automation',
+  'CRM Automation',
+  'Business Process Automation',
+  'AI Chatbots',
+  'Custom AI Solutions',
   'General Enquiry / Not Sure'
 ];
 
@@ -59,7 +52,7 @@ export default function Contact() {
             Get in Touch with <span style={{ color: '#0077FF' }}>Our Experts</span>
           </h2>
           <p className="section-subheading mx-auto text-center">
-            Fill the form and our team will call you back with the best solution for your water management needs.
+            Fill the form and our team will call you back with the best solution for your automation needs.
           </p>
         </motion.div>
 
@@ -183,13 +176,13 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1.5">Product Required *</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-1.5">Service Required *</label>
                     <select
                       {...register('productRequired', { required: 'Please select a product' })}
                       className="form-input"
                     >
-                      <option value="">Select a product...</option>
-                      {productOptions.map(opt => (
+                      <option value="">Select a service...</option>
+                      {serviceOptions.map(opt => (
                         <option key={opt} value={opt}>{opt}</option>
                       ))}
                     </select>
@@ -202,7 +195,7 @@ export default function Contact() {
                       {...register('message')}
                       rows={4}
                       className="form-input resize-none"
-                      placeholder="Tell us more about your requirements, tank capacity, application type..."
+                      placeholder="Tell us more about your workflow, tools, lead volume, or automation goals..."
                     />
                   </div>
 

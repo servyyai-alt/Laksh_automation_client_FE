@@ -1,45 +1,47 @@
 import Seo from '../components/Seo';
 import {
   breadcrumbSchema,
-  faqSchema,
-  localBusinessSchema,
   organizationSchema,
   pageSchema,
-  productCollectionSchema,
+  faqSchema,
   serviceSchema,
   websiteSchema
 } from '../utils/jsonld';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import About from '../components/About';
-import Products from '../components/Products';
+import Services from '../components/Services';
 import Applications from '../components/Applications';
 import WhyChooseUs from '../components/WhyChooseUs';
-import Testimonials from '../components/Testimonials';
-import Statistics from '../components/Statistics';
+import Outcomes from '../components/Outcomes';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
+import { aiAutomationFaqs } from '../data/services';
 
 export default function Home() {
   return (
     <>
       <Seo
-        title="Automatic Water Level Controller Manufacturer"
-        description="Laksh Automations manufactures automatic water level controllers, wireless tank systems, and pump protection solutions for homes, apartments, industries and agriculture."
+        title="Laksh Automations | AI Automation, AI Agents & Business Workflow Automation"
+        titleAbsolute
+        description="Laksh Automations helps businesses automate workflows using AI Agents, WhatsApp Automation, CRM integrations, AI Chatbots, and custom AI solutions."
+        keywords="Laksh Automations, AI Automation, AI Agents, Workflow Automation, Business Automation, CRM Automation, WhatsApp Automation, AI Chatbots, Business Process Automation, Custom AI Solutions, Automation Company India"
         jsonLd={[
           organizationSchema(),
-          localBusinessSchema(),
           websiteSchema(),
           pageSchema({
             name: 'Laksh Automations',
-            description: 'Automatic water level controller manufacturer in Coimbatore, Tamil Nadu.',
+            description: 'AI automation company in Coimbatore, Tamil Nadu.',
             path: '/'
           }),
           breadcrumbSchema([{ name: 'Home', path: '/' }]),
-          productCollectionSchema(),
-          serviceSchema(),
-          faqSchema()
+          serviceSchema({
+            name: 'AI Automation',
+            description: 'AI automation services, AI agents, WhatsApp automation, CRM automation and custom AI solutions.',
+            path: '/'
+          }),
+          faqSchema(aiAutomationFaqs)
         ]}
       />
       <div className="min-h-screen overflow-hidden">
@@ -47,11 +49,10 @@ export default function Home() {
         <main>
           <Hero />
           <About />
-          <Products />
+          <Services />
           <Applications />
           <WhyChooseUs />
-          <Statistics />
-          <Testimonials />
+          <Outcomes />
           <Contact />
         </main>
         <Footer />
