@@ -1,4 +1,6 @@
-export const siteUrl = 'https://www.lakshautomations.in';
+const configuredSiteUrl = String(import.meta.env.VITE_SITE_URL || 'https://www.lakshautomations.in').trim();
+
+export const siteUrl = configuredSiteUrl.replace(/\/+$/, '');
 
 export const siteName = 'Laksh Automations';
 

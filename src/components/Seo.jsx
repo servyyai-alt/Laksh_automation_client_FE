@@ -33,6 +33,8 @@ export default function Seo({
       <meta name="keywords" content={keywords} />
       <meta name="robots" content={robots} />
       <meta name="author" content={siteName} />
+      <meta name="application-name" content={siteName} />
+      <meta name="apple-mobile-web-app-title" content={siteName} />
       <link rel="canonical" href={url} />
 
       <meta property="og:site_name" content={siteName} />
@@ -42,6 +44,9 @@ export default function Seo({
       <meta property="og:title" content={pageTitle} />
       <meta property="og:description" content={pageDesc} />
       <meta property="og:image" content={image} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:image:type" content="image/jpeg" />
       <meta property="og:image:alt" content={pageTitle} />
 
       <meta name="twitter:card" content="summary_large_image" />
