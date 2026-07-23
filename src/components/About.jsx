@@ -2,10 +2,10 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 const values = [
-  { icon: '🏭', title: 'Manufacturing Excellence', desc: 'State-of-the-art production facility in Coimbatore with strict quality control.' },
-  { icon: '🔬', title: 'R&D Focus', desc: 'Continuous innovation in water automation technology for modern challenges.' },
-  { icon: '🌍', title: 'Nationwide Reach', desc: 'Serving customers across Tamil Nadu and all over India with reliable delivery.' },
-  { icon: '🤝', title: 'After-Sales Support', desc: 'Dedicated technical team available for installation, guidance, and service.' }
+  { icon: '🧠', title: 'AI Strategy', desc: 'We map the business workflow before we build, so automation solves the right problem.' },
+  { icon: '🔗', title: 'Integrations', desc: 'We connect your CRM, WhatsApp, inbox, forms, and internal tools into one workflow.' },
+  { icon: '🚀', title: 'Launch Ready', desc: 'We design systems with testing, handoff logic, and maintainability in mind.' },
+  { icon: '🤝', title: 'Support', desc: 'We stay involved through launch so your team can adopt the automation smoothly.' }
 ];
 
 export default function About() {
@@ -33,16 +33,16 @@ export default function About() {
                     </div>
                     <div>
                       <div className="text-white font-bold font-display text-xl">Laksh Automations</div>
-                      <div className="text-secondary-400 text-sm">Water Management Specialists</div>
+                      <div className="text-secondary-400 text-sm">AI Automation Specialists</div>
                     </div>
                   </div>
 
                   {/* Progress bars */}
                   {[
-                    { label: 'Product Quality', pct: 98 },
-                    { label: 'Customer Satisfaction', pct: 97 },
-                    { label: 'On-time Delivery', pct: 95 },
-                    { label: 'Technical Support', pct: 99 }
+                    { label: 'Workflow Clarity', pct: 98 },
+                    { label: 'Integration Readiness', pct: 96 },
+                    { label: 'Launch Reliability', pct: 95 },
+                    { label: 'Ongoing Support', pct: 99 }
                   ].map((item, i) => (
                     <div key={i} className="mb-5">
                       <div className="flex justify-between mb-1">
@@ -65,8 +65,8 @@ export default function About() {
 
               {/* Floating badge */}
               <div className="absolute -bottom-5 -right-5 bg-gradient-to-br from-primary-500 to-secondary-500 text-white rounded-2xl p-5 shadow-glow">
-                <div className="text-3xl font-display font-black">15+</div>
-                <div className="text-xs font-medium opacity-90">Years of Trust</div>
+                <div className="text-3xl font-display font-black">1</div>
+                <div className="text-xs font-medium opacity-90">Focused Brand</div>
               </div>
             </div>
           </motion.div>
@@ -79,14 +79,14 @@ export default function About() {
           >
             <div className="badge-water mb-5">About Us</div>
             <h2 className="section-heading mb-5">
-              Pioneers in Smart Water{' '}
+              Pioneers in Smart{' '}
               <span style={{ color: '#0077FF' }}>Automation</span>
             </h2>
             <p className="section-subheading mb-6">
-              Founded in Coimbatore, Tamil Nadu, Laksh Automations has been engineering reliable water management solutions for over 15 years. Our products serve homes, high-rise apartments, factories, hospitals, schools, hotels, and farmlands across India.
+              Founded in Coimbatore, Tamil Nadu, Laksh Automations builds AI automation systems for growing businesses across India. We help teams reduce repetitive work, connect tools, and respond faster with AI agents, chatbots, and workflow automation.
             </p>
             <p className="section-subheading mb-8">
-              Every product is designed and manufactured with the Indian climate and infrastructure in mind — built to last, easy to install, and engineered to save both water and electricity.
+              Every solution is designed around your process, your stack, and your business goals so the automation actually gets used.
             </p>
 
             <div className="grid grid-cols-2 gap-5">

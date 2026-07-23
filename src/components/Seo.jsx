@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import { useLocation } from 'react-router-dom';
 import {
   absoluteUrl,
   canonicalUrl,
@@ -17,12 +18,18 @@ export default function Seo({
   ogType = 'website',
   canonical,
   noindex = false,
-  jsonLd = []
+  jsonLd = [],
+  titleAbsolute = false
 }) {
-  const pageTitle = title ? `${title} | ${siteName}` : defaultTitle;
+  const location = useLocation();
+  const pageTitle = title
+    ? titleAbsolute || title.includes(siteName) || title.includes('|')
+      ? title
+      : `${title} | ${siteName}`
+    : defaultTitle;
   const pageDesc = description || defaultDescription;
   const image = absoluteUrl(ogImage || '/og-image.jpg');
-  const url = canonical ? canonicalUrl(canonical) : siteUrl;
+  const url = canonical ? canonicalUrl(canonical) : canonicalUrl(location.pathname);
   const schemaList = Array.isArray(jsonLd) ? jsonLd : [jsonLd];
   const robots = noindex ? 'noindex, nofollow, noarchive' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
 
@@ -35,6 +42,7 @@ export default function Seo({
       <meta name="author" content={siteName} />
       <meta name="application-name" content={siteName} />
       <meta name="apple-mobile-web-app-title" content={siteName} />
+      <meta name="format-detection" content="telephone=yes" />
       <link rel="canonical" href={url} />
 
       <meta property="og:site_name" content={siteName} />
@@ -50,6 +58,7 @@ export default function Seo({
       <meta property="og:image:alt" content={pageTitle} />
 
       <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="@LakshAutomations" />
       <meta name="twitter:title" content={pageTitle} />
       <meta name="twitter:description" content={pageDesc} />
       <meta name="twitter:image" content={image} />

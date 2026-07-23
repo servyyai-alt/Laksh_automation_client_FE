@@ -4,23 +4,23 @@ export const siteUrl = configuredSiteUrl.replace(/\/+$/, '');
 
 export const siteName = 'Laksh Automations';
 
-export const defaultTitle = 'Laksh Automations - Automatic Water Level Controller Manufacturer, Coimbatore';
+export const defaultTitle = 'Laksh Automations | AI Automation, AI Agents & Business Workflow Automation';
 
 export const defaultDescription =
-  "India's trusted automatic water level controller manufacturer in Coimbatore. Smart water management solutions for homes, apartments, industries & agriculture.";
+  'Laksh Automations helps businesses automate workflows using AI Agents, WhatsApp Automation, CRM integrations, AI Chatbots, and custom AI solutions.';
 
 export const defaultKeywords = [
-  'Automatic Water Level Controller',
-  'Water Pump Controller Manufacturer',
-  'Water Level Controller Coimbatore',
-  'Automatic Motor Controller',
-  'Wireless Water Level Controller',
-  'Tank Overflow Prevention System',
-  'Borewell Protection System',
-  'Motor Protection Controller',
-  'Industrial Water Automation',
-  'Agricultural Pump Controller',
-  'Smart Water Management System'
+  'Laksh Automations',
+  'AI Automation',
+  'AI Agents',
+  'Workflow Automation',
+  'Business Automation',
+  'CRM Automation',
+  'WhatsApp Automation',
+  'AI Chatbots',
+  'Business Process Automation',
+  'Custom AI Solutions',
+  'Automation Company India'
 ].join(', ');
 
 export const contactDetails = {
