@@ -31,7 +31,7 @@ export default function AdminLogin() {
       <Seo
         title="Admin Login"
         description="Sign in to manage Laksh Automations products and enquiries."
-        canonical="https://www.lakshautomations.com/admin/login"
+        canonical="https://www.lakshautomations.in/admin/login"
         noindex
       />
       <div className="min-h-screen flex items-center justify-center p-4" style={{ background: 'linear-gradient(135deg, #0A1628, #0D2347, #0077FF)' }}>

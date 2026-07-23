@@ -77,7 +77,7 @@ export default function Contact() {
 
               {[
                 { icon: '📞', label: 'Phone', value: '+91 88075 00321', href: 'tel:+918807500321' },
-                { icon: '🌐', label: 'Website', value: 'www.lakshautomations.com', href: 'https://www.lakshautomations.com' },
+                { icon: '🌐', label: 'Website', value: 'www.lakshautomations.in', href: 'https://www.lakshautomations.in' },
                 { icon: '📍', label: 'Location', value: 'Coimbatore, Tamil Nadu, India', href: null }
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-4 mb-5">

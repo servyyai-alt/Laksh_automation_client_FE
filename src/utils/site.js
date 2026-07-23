@@ -1,4 +1,4 @@
-export const siteUrl = 'https://www.lakshautomations.com';
+export const siteUrl = 'https://www.lakshautomations.in';
 
 export const siteName = 'Laksh Automations';
 

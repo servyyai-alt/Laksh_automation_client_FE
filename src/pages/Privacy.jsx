@@ -8,7 +8,7 @@ export default function Privacy() {
       <Seo
         title="Privacy Policy"
         description="Laksh Automations Privacy Policy - Learn how we collect, use, and protect your personal information."
-        canonical="https://www.lakshautomations.com/privacy"
+        canonical="https://www.lakshautomations.in/privacy"
         jsonLd={[
           pageSchema({
             name: 'Privacy Policy',
@@ -30,7 +30,7 @@ export default function Privacy() {
           <div className="prose prose-gray max-w-none space-y-6 text-gray-700 text-sm leading-relaxed">
             <section>
               <h2 className="font-display font-semibold text-xl text-dark-navy mb-3">1. Introduction</h2>
-              <p>Laksh Automations ("we", "our", "us") respects your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your personal information when you visit our website www.lakshautomations.com or interact with our services.</p>
+              <p>Laksh Automations ("we", "our", "us") respects your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your personal information when you visit our website www.lakshautomations.in or interact with our services.</p>
             </section>
 
             <section>
