@@ -1,32 +1,59 @@
 import { Helmet } from 'react-helmet-async';
+import {
+  absoluteUrl,
+  canonicalUrl,
+  defaultDescription,
+  defaultKeywords,
+  defaultTitle,
+  siteName,
+  siteUrl
+} from '../utils/site';
 
-const siteUrl = 'https://www.lakshautomations.com';
-const defaultTitle = 'Laksh Automations – Automatic Water Level Controller Manufacturer, Coimbatore';
-const defaultDesc = "India's trusted automatic water level controller manufacturer in Coimbatore. Smart water management solutions for homes, apartments, industries & agriculture.";
-
-export default function Seo({ title, description, ogImage, ogType = 'website', canonical, noindex }) {
-  const pageTitle = title ? `${title} | Laksh Automations` : defaultTitle;
-  const pageDesc = description || defaultDesc;
-  const image = ogImage || `${siteUrl}/og-image.jpg`;
-  const url = canonical || siteUrl;
+export default function Seo({
+  title,
+  description,
+  keywords = defaultKeywords,
+  ogImage,
+  ogType = 'website',
+  canonical,
+  noindex = false,
+  jsonLd = []
+}) {
+  const pageTitle = title ? `${title} | ${siteName}` : defaultTitle;
+  const pageDesc = description || defaultDescription;
+  const image = absoluteUrl(ogImage || '/og-image.jpg');
+  const url = canonical ? canonicalUrl(canonical) : siteUrl;
+  const schemaList = Array.isArray(jsonLd) ? jsonLd : [jsonLd];
+  const robots = noindex ? 'noindex, nofollow, noarchive' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
 
   return (
-    <Helmet>
+    <Helmet htmlAttributes={{ lang: 'en' }}>
       <title>{pageTitle}</title>
       <meta name="description" content={pageDesc} />
+      <meta name="keywords" content={keywords} />
+      <meta name="robots" content={robots} />
+      <meta name="author" content={siteName} />
       <link rel="canonical" href={url} />
 
+      <meta property="og:site_name" content={siteName} />
+      <meta property="og:locale" content="en_IN" />
       <meta property="og:type" content={ogType} />
       <meta property="og:url" content={url} />
       <meta property="og:title" content={pageTitle} />
       <meta property="og:description" content={pageDesc} />
       <meta property="og:image" content={image} />
+      <meta property="og:image:alt" content={pageTitle} />
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={pageTitle} />
       <meta name="twitter:description" content={pageDesc} />
       <meta name="twitter:image" content={image} />
-      {noindex && <meta name="robots" content="noindex, nofollow" />}
+
+      {schemaList.filter(Boolean).map((schema, index) => (
+        <script key={index} type="application/ld+json">
+          {JSON.stringify(schema)}
+        </script>
+      ))}
     </Helmet>
   );
 }

@@ -1,10 +1,26 @@
 import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';
+import { breadcrumbSchema, pageSchema } from '../utils/jsonld';
 
 export default function Terms() {
   return (
     <>
-      <Seo title="Terms and Conditions" description="Terms and Conditions for Laksh Automations - Read our terms of service, warranty policy, and usage guidelines." />
+      <Seo
+        title="Terms and Conditions"
+        description="Terms and Conditions for Laksh Automations - Read our terms of service, warranty policy, and usage guidelines."
+        canonical="https://www.lakshautomations.com/terms"
+        jsonLd={[
+          pageSchema({
+            name: 'Terms and Conditions',
+            description: 'Terms and Conditions for Laksh Automations.',
+            path: '/terms'
+          }),
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Terms and Conditions', path: '/terms' }
+          ])
+        ]}
+      />
       <div className="min-h-screen bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <Link to="/" className="text-primary-500 hover:text-primary-600 text-sm font-medium mb-8 inline-block">&larr; Back to Home</Link>

@@ -1,10 +1,26 @@
 import { Link } from 'react-router-dom';
 import Seo from '../components/Seo';
+import { breadcrumbSchema, pageSchema } from '../utils/jsonld';
 
 export default function Privacy() {
   return (
     <>
-      <Seo title="Privacy Policy" description="Laksh Automations Privacy Policy - Learn how we collect, use, and protect your personal information." />
+      <Seo
+        title="Privacy Policy"
+        description="Laksh Automations Privacy Policy - Learn how we collect, use, and protect your personal information."
+        canonical="https://www.lakshautomations.com/privacy"
+        jsonLd={[
+          pageSchema({
+            name: 'Privacy Policy',
+            description: 'Laksh Automations Privacy Policy.',
+            path: '/privacy'
+          }),
+          breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Privacy Policy', path: '/privacy' }
+          ])
+        ]}
+      />
       <div className="min-h-screen bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <Link to="/" className="text-primary-500 hover:text-primary-600 text-sm font-medium mb-8 inline-block">&larr; Back to Home</Link>

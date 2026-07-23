@@ -1,5 +1,14 @@
 import Seo from '../components/Seo';
-import { organizationSchema, localBusinessSchema, aggregateRatingSchema, faqSchema } from '../utils/jsonld';
+import {
+  breadcrumbSchema,
+  faqSchema,
+  localBusinessSchema,
+  organizationSchema,
+  pageSchema,
+  productCollectionSchema,
+  serviceSchema,
+  websiteSchema
+} from '../utils/jsonld';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import About from '../components/About';
@@ -15,19 +24,24 @@ import WhatsAppButton from '../components/WhatsAppButton';
 export default function Home() {
   return (
     <>
-      <Seo />
-      <script type="application/ld+json">
-        {JSON.stringify(organizationSchema())}
-      </script>
-      <script type="application/ld+json">
-        {JSON.stringify(localBusinessSchema())}
-      </script>
-      <script type="application/ld+json">
-        {JSON.stringify(aggregateRatingSchema())}
-      </script>
-      <script type="application/ld+json">
-        {JSON.stringify(faqSchema())}
-      </script>
+      <Seo
+        title="Automatic Water Level Controller Manufacturer"
+        description="Laksh Automations manufactures automatic water level controllers, wireless tank systems, and pump protection solutions for homes, apartments, industries and agriculture."
+        jsonLd={[
+          organizationSchema(),
+          localBusinessSchema(),
+          websiteSchema(),
+          pageSchema({
+            name: 'Laksh Automations',
+            description: 'Automatic water level controller manufacturer in Coimbatore, Tamil Nadu.',
+            path: '/'
+          }),
+          breadcrumbSchema([{ name: 'Home', path: '/' }]),
+          productCollectionSchema(),
+          serviceSchema(),
+          faqSchema()
+        ]}
+      />
       <div className="min-h-screen overflow-hidden">
         <Navbar />
         <main>

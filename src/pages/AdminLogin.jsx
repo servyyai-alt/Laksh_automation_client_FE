@@ -28,7 +28,12 @@ export default function AdminLogin() {
 
   return (
     <>
-      <Seo title="Admin Login" description="Sign in to manage Laksh Automations products and enquiries." canonical="https://www.lakshautomations.com/admin/login" />
+      <Seo
+        title="Admin Login"
+        description="Sign in to manage Laksh Automations products and enquiries."
+        canonical="https://www.lakshautomations.com/admin/login"
+        noindex
+      />
       <div className="min-h-screen flex items-center justify-center p-4" style={{ background: 'linear-gradient(135deg, #0A1628, #0D2347, #0077FF)' }}>
       {/* Bubbles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
