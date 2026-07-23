@@ -87,7 +87,7 @@ export default function AdminLogin() {
                 })}
                 type="email"
                 className="form-input"
-                placeholder="admin@lakshautomations.com"
+                placeholder="admin@lakshautomations.in"
                 autoComplete="email"
               />
               {errors.email && <p className="text-red-400 text-xs mt-1">{errors.email.message}</p>}
