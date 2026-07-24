@@ -10,6 +10,7 @@ import {
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import About from '../components/About';
+import Products from '../components/Products';
 import Services from '../components/Services';
 import Applications from '../components/Applications';
 import WhyChooseUs from '../components/WhyChooseUs';
@@ -50,6 +51,7 @@ export default function Home() {
           <Hero />
           <About />
           <Services />
+          <Products />
           <Applications />
           <WhyChooseUs />
           <Outcomes />
