@@ -3,20 +3,20 @@ import { useInView } from 'react-intersection-observer';
 
 const outcomes = [
   {
-    title: 'Less manual work',
-    description: 'Reduce repetitive tasks across lead handling, support, and internal operations.'
+    title: 'No More Water Overflow',
+    description: 'Prevent tank overflow and save water with automatic level detection and pump control.'
   },
   {
-    title: 'Faster response times',
-    description: 'Use AI agents and chatbots to respond quickly, even outside business hours.'
+    title: 'Motor Protection',
+    description: 'Protect your pump motor from dry run, overload, and phase failure with built-in safety systems.'
   },
   {
-    title: 'Better system visibility',
-    description: 'Keep CRM, inbox, and workflow updates consistent across your stack.'
+    title: 'Remote Monitoring',
+    description: 'Monitor and control your water systems from anywhere using GSM and IoT-enabled controllers.'
   },
   {
-    title: 'More scalable processes',
-    description: 'Create automation that can grow as your business and volume increase.'
+    title: 'Reduced Maintenance',
+    description: 'Reliable automation reduces manual intervention and extends the life of your water pump systems.'
   }
 ];
 
@@ -34,10 +34,10 @@ export default function Outcomes() {
         >
           <div className="badge-water mb-4 mx-auto w-fit">Outcomes</div>
           <h2 className="section-heading mb-4">
-            What Your Business Gets with <span style={{ color: '#0077FF' }}>Automation</span>
+            What You Get with <span style={{ color: '#0077FF' }}>Laksh Automations</span>
           </h2>
           <p className="section-subheading mx-auto text-center">
-            The best automation projects are measurable. We focus on outcomes that improve day-to-day operations.
+            Our water automation solutions deliver measurable results for every application.
           </p>
         </motion.div>
 
@@ -60,4 +60,3 @@ export default function Outcomes() {
     </section>
   );
 }
-

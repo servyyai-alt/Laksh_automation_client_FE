@@ -3,52 +3,52 @@ import { useInView } from 'react-intersection-observer';
 
 const reasons = [
   {
-    icon: '🧠',
-    title: 'Strategy First',
-    desc: 'We start by understanding the process, the bottlenecks, and the business outcome you want.',
-    highlight: 'Business Led'
+    icon: '🏭',
+    title: 'High Quality Manufacturing',
+    desc: 'Every product is manufactured with precision using premium components and rigorous quality checks.',
+    highlight: 'Quality'
   },
   {
-    icon: '⚙️',
-    title: 'Modern Stack',
-    desc: 'We design automations that fit the tools you already use, including CRM, WhatsApp, email, and forms.',
-    highlight: 'Integrated'
+    icon: '✅',
+    title: 'Reliable Products',
+    desc: 'Our controllers are built to perform consistently in all conditions with minimal maintenance.',
+    highlight: 'Dependable'
   },
   {
-    icon: '🔧',
-    title: 'Production Ready',
-    desc: 'We think through retries, logging, handoff logic, and maintainability before launch.',
-    highlight: 'Reliable'
+    icon: '🔬',
+    title: 'Advanced Technology',
+    desc: 'We use the latest microcontroller and wireless technology for smart water management.',
+    highlight: 'Innovative'
   },
   {
     icon: '📞',
-    title: 'Expert Support',
-    desc: 'We stay involved through implementation so your team can adopt the automation smoothly.',
-    highlight: 'Guided'
+    title: 'Expert Technical Support',
+    desc: 'Our dedicated support team is always ready to help with installation and troubleshooting.',
+    highlight: 'Support'
   },
   {
     icon: '⚡',
-    title: 'Fast Delivery',
-    desc: 'We move quickly from discovery to launch so you see value sooner.',
-    highlight: 'Quick Launch'
-  },
-  {
-    icon: '💰',
-    title: 'Clear Scope',
-    desc: 'You get a practical proposal focused on outcomes, not vague automation promises.',
-    highlight: 'Transparent'
+    title: 'Fast Service',
+    desc: 'Quick delivery and responsive after-sales service to keep your water system running.',
+    highlight: 'Quick'
   },
   {
     icon: '😊',
-    title: 'Better Conversations',
-    desc: 'AI chatbots and agents help you reply consistently and professionally.',
-    highlight: 'Always On'
+    title: 'Customer Satisfaction',
+    desc: 'Over 10,000 happy customers trust our products for their water management needs.',
+    highlight: 'Trusted'
   },
   {
     icon: '🇮🇳',
-    title: 'Built in India',
-    desc: 'We are based in Coimbatore and build solutions for Indian business workflows.',
-    highlight: 'India First'
+    title: 'Made in India',
+    desc: 'Proudly designed and manufactured in Coimbatore, Tamil Nadu for Indian conditions.',
+    highlight: 'Indian'
+  },
+  {
+    icon: '💰',
+    title: 'Affordable Pricing',
+    desc: 'Premium quality water automation solutions at prices that fit every budget.',
+    highlight: 'Value'
   }
 ];
 
@@ -66,10 +66,10 @@ export default function WhyChooseUs() {
         >
           <div className="badge-water mb-4 mx-auto w-fit">Why Choose Us</div>
           <h2 className="section-heading mb-4">
-            Why Businesses Trust <span style={{ color: '#0077FF' }}>Laksh Automations</span>
+            Why Choose <span style={{ color: '#0077FF' }}>Laksh Automations?</span>
           </h2>
           <p className="section-subheading mx-auto text-center">
-            We build automation around real workflows, real people, and real business goals.
+            Smart Control. Sure Protection.
           </p>
         </motion.div>
 

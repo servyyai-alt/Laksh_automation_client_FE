@@ -57,8 +57,12 @@ const ProductCard = ({ product, index }) => {
           <img
             src={product.image}
             alt={product.name}
+            title={product.name}
+            width="480"
+            height="352"
             className="w-full h-full object-cover"
             loading="lazy"
+            decoding="async"
           />
         ) : (
           <div className="flex flex-col items-center gap-2">

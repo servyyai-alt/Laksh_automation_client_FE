@@ -7,9 +7,9 @@ export function organizationSchema() {
     '@id': `${siteUrl}#organization`,
     name: siteName,
     url: siteUrl,
-    logo: absoluteUrl('/og-image.jpg'),
+    logo: absoluteUrl('/favicon.svg'),
     description:
-      'Laksh Automations helps businesses automate workflows using AI Agents, WhatsApp Automation, CRM integrations, AI Chatbots, and custom AI solutions.',
+      'Leading manufacturer of automatic water level controllers, wireless water level controllers, borewell protection systems, and water automation solutions in Coimbatore, Tamil Nadu.',
     contactPoint: [
       {
         '@type': 'ContactPoint',
@@ -23,11 +23,41 @@ export function organizationSchema() {
       '@type': 'PostalAddress',
       ...contactDetails.address
     },
-    sameAs: [
-      'https://www.linkedin.com',
-      'https://www.instagram.com'
-    ],
+    sameAs: ['https://www.linkedin.com', 'https://www.instagram.com'],
     areaServed: 'IN'
+  };
+}
+
+export function localBusinessSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    '@id': `${siteUrl}#localbusiness`,
+    name: siteName,
+    url: siteUrl,
+    image: absoluteUrl('/og-image.jpg'),
+    logo: absoluteUrl('/favicon.svg'),
+    telephone: contactDetails.phone,
+    email: contactDetails.email,
+    priceRange: '$$',
+    address: {
+      '@type': 'PostalAddress',
+      ...contactDetails.address
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: contactDetails.geo.latitude,
+      longitude: contactDetails.geo.longitude
+    },
+    areaServed: 'Coimbatore, Tamil Nadu, India',
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+        opens: '09:00',
+        closes: '18:00'
+      }
+    ]
   };
 }
 
@@ -39,7 +69,7 @@ export function websiteSchema() {
     url: siteUrl,
     name: siteName,
     description:
-      'AI automation, AI agents, WhatsApp automation, CRM automation and custom AI solutions.',
+      'Automatic water level controllers, wireless water level controllers, borewell protection systems, and water automation solutions.',
     publisher: {
       '@id': `${siteUrl}#organization`
     },
@@ -51,7 +81,7 @@ export function serviceSchema({
   name,
   description,
   path = '/',
-  serviceType = 'AI Automation Service'
+  serviceType = 'Water Automation Products'
 }) {
   return {
     '@context': 'https://schema.org',
@@ -112,4 +142,3 @@ export function faqSchema(faqs = []) {
     }))
   };
 }
-

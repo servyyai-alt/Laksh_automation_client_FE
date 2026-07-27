@@ -6,14 +6,14 @@ import toast from 'react-hot-toast';
 import API from '../utils/api';
 
 const serviceOptions = [
-  'AI Automation',
-  'AI Agents',
-  'Workflow Automation',
-  'WhatsApp Automation',
-  'CRM Automation',
-  'Business Process Automation',
-  'AI Chatbots',
-  'Custom AI Solutions',
+  'Single Phase Water Level Controller',
+  'Three Phase Water Level Controller',
+  'Wireless Water Level Controller',
+  'Borewell Dry Run Protection',
+  'GSM Mobile Pump Controller',
+  'IoT Smart Water Controller',
+  'Apartment Water Automation',
+  'Industrial Water Automation',
   'General Enquiry / Not Sure'
 ];
 
@@ -52,7 +52,7 @@ export default function Contact() {
             Get in Touch with <span style={{ color: '#0077FF' }}>Our Experts</span>
           </h2>
           <p className="section-subheading mx-auto text-center">
-            Fill the form and our team will call you back with the best solution for your automation needs.
+            Fill the form and our team will call you back with the best solution for your water management needs.
           </p>
         </motion.div>
 
@@ -70,7 +70,7 @@ export default function Contact() {
 
               {[
                 { icon: '📞', label: 'Phone', value: '+91 88075 00321', href: 'tel:+918807500321' },
-                { icon: '🌐', label: 'Website', value: 'www.lakshautomations.in', href: 'https://www.lakshautomations.in' },
+                { icon: '🌐', label: 'Website', value: 'lakshautomations.in', href: 'https://lakshautomations.in' },
                 { icon: '📍', label: 'Location', value: 'Coimbatore, Tamil Nadu, India', href: null }
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-4 mb-5">
@@ -176,12 +176,12 @@ export default function Contact() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1.5">Service Required *</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-1.5">Product Required *</label>
                     <select
                       {...register('productRequired', { required: 'Please select a product' })}
                       className="form-input"
                     >
-                      <option value="">Select a service...</option>
+                      <option value="">Select a product...</option>
                       {serviceOptions.map(opt => (
                         <option key={opt} value={opt}>{opt}</option>
                       ))}
@@ -195,7 +195,7 @@ export default function Contact() {
                       {...register('message')}
                       rows={4}
                       className="form-input resize-none"
-                      placeholder="Tell us more about your workflow, tools, lead volume, or automation goals..."
+                      placeholder="Tell us more about your water management requirements..."
                     />
                   </div>
 

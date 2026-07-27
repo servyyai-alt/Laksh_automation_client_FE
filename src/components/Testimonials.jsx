@@ -2,13 +2,12 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
-const testimonials = [
-  { name: 'Rajesh Kumar', location: 'Chennai, Tamil Nadu', rating: 5, product: 'L10SS Single Phase Controller', text: 'Excellent product quality! The L10SS works perfectly for my home water tank. Easy to install and no issues in 2 years of use. My electricity bill also reduced significantly.', avatar: 'RK' },
-  { name: 'Priya Subramaniam', location: 'Coimbatore, Tamil Nadu', rating: 5, product: 'Wireless Water Level Controller', text: 'The wireless controller is amazing! No drilling holes through walls for wires. Setup in 15 minutes and works flawlessly. The signal is strong across my entire property.', avatar: 'PS' },
-  { name: 'Mohammed Farooq', location: 'Madurai, Tamil Nadu', rating: 5, product: 'Three Phase Motor Controller', text: 'We installed the L30SS for our factory water system. Outstanding performance and the phase failure protection saved our motor multiple times. Best customer support team.', avatar: 'MF' },
-  { name: 'Anitha Krishnaswamy', location: 'Bangalore, Karnataka', rating: 5, product: 'Borewell Dry Run Protection', text: 'The borewell protection system is a must-have. Our previous motor burned due to dry running. After installing Laksh\'s protection, no motor failures in 18 months!', avatar: 'AK' },
-  { name: 'Suresh Venkataraman', location: 'Erode, Tamil Nadu', rating: 5, product: 'GSM Mobile Pump Controller', text: 'I control my farm pump from my phone using SMS. Even in areas without internet, it works perfectly. Laksh Automations has changed how I manage my farm water.', avatar: 'SV' },
-  { name: 'Deepa Nair', location: 'Trichy, Tamil Nadu', rating: 5, product: 'Apartment Water Automation', text: 'Installed in our 24-apartment complex. Zero water overflow complaints since installation. The central panel is easy to monitor. Excellent value for money solution.', avatar: 'DN' }
+const reviews = [
+  { category: 'Excellent Product Quality', text: 'The build quality of Laksh Automations products is outstanding. Premium components and solid construction ensure long-lasting performance.', avatar: 'PQ' },
+  { category: 'Easy Installation', text: 'Our electrician installed the controller in just 30 minutes. Clear instructions and well-labeled terminals make setup hassle-free.', avatar: 'EI' },
+  { category: 'Reliable Performance', text: 'Running non-stop for 2 years without a single issue. The automatic pump control works flawlessly day and night.', avatar: 'RP' },
+  { category: 'Best Customer Support', text: 'Quick response on WhatsApp and phone. The support team helped us choose the right product and guided us through installation.', avatar: 'CS' },
+  { category: 'Value for Money', text: 'Best water level controller at this price range. Saved us from water overflow and motor damage. Worth every rupee.', avatar: 'VM' }
 ];
 
 const Stars = ({ count }) => (
@@ -25,8 +24,8 @@ export default function Testimonials() {
   const [active, setActive] = useState(0);
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
 
-  const prev = () => setActive(a => (a - 1 + testimonials.length) % testimonials.length);
-  const next = () => setActive(a => (a + 1) % testimonials.length);
+  const prev = () => setActive(a => (a - 1 + reviews.length) % reviews.length);
+  const next = () => setActive(a => (a + 1) % reviews.length);
 
   return (
     <section id="testimonials" className="section-py bg-white" ref={ref}>
@@ -37,7 +36,7 @@ export default function Testimonials() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <div className="badge-water mb-4 mx-auto w-fit">Testimonials</div>
+          <div className="badge-water mb-4 mx-auto w-fit">Customer Reviews</div>
           <h2 className="section-heading mb-4">
             What Our <span style={{ color: '#0077FF' }}>Customers</span> Say
           </h2>
@@ -55,7 +54,7 @@ export default function Testimonials() {
           </a>
         </motion.div>
 
-        {/* Featured testimonial */}
+        {/* Featured review */}
         <div className="max-w-2xl mx-auto mb-8">
           <AnimatePresence mode="wait">
             <motion.div
@@ -74,22 +73,17 @@ export default function Testimonials() {
                   className="w-14 h-14 rounded-2xl flex items-center justify-center text-white font-bold text-lg flex-shrink-0"
                   style={{ background: 'linear-gradient(135deg, #0077FF, #00B4D8)' }}
                 >
-                  {testimonials[active].avatar}
+                  {reviews[active].avatar}
                 </div>
                 <div>
-                  <div className="font-display font-bold text-white text-base">{testimonials[active].name}</div>
-                  <div className="text-secondary-400 text-sm">{testimonials[active].location}</div>
-                  <Stars count={testimonials[active].rating} />
+                  <div className="font-display font-bold text-white text-base">{reviews[active].category}</div>
+                  <Stars count={5} />
                 </div>
               </div>
 
               <blockquote className="text-white/85 text-base leading-relaxed mb-4 italic">
-                "{testimonials[active].text}"
+                &ldquo;{reviews[active].text}&rdquo;
               </blockquote>
-
-              <div className="text-xs text-secondary-500 font-medium">
-                Product: {testimonials[active].product}
-              </div>
             </motion.div>
           </AnimatePresence>
 
@@ -101,7 +95,7 @@ export default function Testimonials() {
               </svg>
             </button>
             <div className="flex gap-2">
-              {testimonials.map((_, i) => (
+              {reviews.map((_, i) => (
                 <button
                   key={i}
                   onClick={() => setActive(i)}
@@ -123,8 +117,8 @@ export default function Testimonials() {
         </div>
 
         {/* Thumbnail grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
-          {testimonials.map((t, i) => (
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
+          {reviews.map((r, i) => (
             <motion.button
               key={i}
               onClick={() => setActive(i)}
@@ -138,11 +132,10 @@ export default function Testimonials() {
               animate={inView ? { opacity: i === active ? 1 : 0.7, y: 0 } : {}}
               transition={{ duration: 0.3, delay: i * 0.05 }}
             >
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center text-white text-xs font-bold mb-2" style={{ background: 'linear-gradient(135deg, #0077FF, #00B4D8)' }}>
-                {t.avatar}
+              <div className="flex items-center gap-1 mb-1">
+                <Stars count={5} />
               </div>
-              <div className="text-xs font-semibold text-dark-navy truncate">{t.name}</div>
-              <div className="text-xs text-gray-400 truncate">{t.location.split(',')[0]}</div>
+              <div className="text-xs font-semibold text-dark-navy">{r.category}</div>
             </motion.button>
           ))}
         </div>

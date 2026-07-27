@@ -6,9 +6,9 @@ import logo from '../assets/logo.png';
 const navItems = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
-  { label: 'Services', href: '/services' },
   { label: 'Products', href: '#products' },
-  { label: 'Use Cases', href: '#use-cases' },
+  { label: 'Services', href: '/services' },
+  { label: 'Applications', href: '#use-cases' },
   { label: 'Why Us', href: '#why-us' },
   { label: 'Results', href: '#results' },
   { label: 'Contact', href: '#contact' }
@@ -46,6 +46,7 @@ export default function Navbar() {
               <img
                 src={logo}
                 alt="Laksh Automations logo"
+                title="Laksh Automations logo"
                 width="60"
                 height="40"
                 loading="eager"
@@ -60,7 +61,7 @@ export default function Navbar() {
             </div>
           </a>
 
-          <div className="hidden lg:flex items-center gap-7">
+          <nav className="hidden lg:flex items-center gap-7" aria-label="Primary navigation">
             {navItems.map((item) =>
               item.href.startsWith('#') ? (
                 <a key={item.label} href={item.href} onClick={(e) => handleAnchor(e, item.href)} className="nav-link text-sm">
@@ -72,7 +73,7 @@ export default function Navbar() {
                 </Link>
               ),
             )}
-          </div>
+          </nav>
 
           <div className="hidden lg:flex items-center gap-3">
             <a
@@ -108,7 +109,7 @@ export default function Navbar() {
             transition={{ duration: 0.2 }}
             className="lg:hidden bg-dark-navy/98 backdrop-blur-md border-t border-primary-500/20"
           >
-            <div className="max-w-7xl mx-auto px-4 py-4 space-y-1">
+            <nav className="max-w-7xl mx-auto px-4 py-4 space-y-1" aria-label="Mobile navigation">
               {navItems.map((item) =>
                 item.href.startsWith('#') ? (
                   <a
@@ -138,7 +139,7 @@ export default function Navbar() {
                   Get Quote
                 </a>
               </div>
-            </div>
+            </nav>
           </motion.div>
         )}
       </AnimatePresence>

@@ -1,155 +1,150 @@
 export const serviceCatalog = [
   {
-    slug: 'ai-automation',
-    title: 'AI Automation',
-    headline: 'Automate repetitive work with intelligent AI systems',
+    slug: 'single-phase-controllers',
+    title: 'Single Phase Controllers',
+    headline: 'Reliable water level control for homes and small buildings',
     description:
-      'We design AI-powered workflows that reduce manual tasks, move data between tools, and keep your team focused on higher-value work.',
-    keywords: ['AI automation', 'business automation', 'workflow automation'],
-    benefits: ['Reduce manual work', 'Speed up operations', 'Improve consistency'],
-    deliverables: ['Workflow mapping', 'Automation design', 'Integration setup', 'Testing and launch'],
-    useCases: ['Lead routing', 'Email triage', 'Data sync', 'Internal approvals'],
+      'Our single phase water level controllers are designed for residential buildings, small offices, and individual homes. They automatically manage pump operation based on water levels.',
+    keywords: ['single phase controller', 'home water level controller', 'automatic pump controller'],
+    benefits: ['Automatic pump control', 'Overflow prevention', 'Motor protection'],
+    deliverables: ['Controller unit', 'Sensor probes', 'Installation guide', 'Warranty card'],
+    useCases: ['Independent homes', 'Small offices', 'Shops', 'Villas'],
     faqs: [
       {
-        question: 'What is AI automation?',
+        question: 'What is a single phase water level controller?',
         answer:
-          'AI automation uses intelligent workflows and integrations to handle repetitive business tasks with less manual effort and faster execution.'
+          'A single phase water level controller is a device that automatically controls the water pump connected to a single phase power supply based on water levels in the tank.'
       },
       {
-        question: 'Can you integrate with the tools we already use?',
+        question: 'Can it work with my existing pump?',
         answer:
-          'Yes. We design automations around your existing tools such as CRMs, inboxes, forms, WhatsApp, and internal systems.'
+          'Yes. Our controllers are compatible with most single phase submersible and monoblock pumps available in India.'
       }
     ]
   },
   {
-    slug: 'ai-agents',
-    title: 'AI Agents',
-    headline: 'Deploy AI agents that can assist, qualify, and respond automatically',
+    slug: 'three-phase-controllers',
+    title: 'Three Phase Controllers',
+    headline: 'Heavy-duty water automation for commercial and industrial use',
     description:
-      'Build specialized AI agents that answer questions, qualify leads, route requests, and support your team 24/7.',
-    keywords: ['AI agents', 'agent automation', 'customer support automation'],
-    benefits: ['24/7 support', 'Faster lead qualification', 'Better customer response'],
-    deliverables: ['Agent design', 'Prompt workflows', 'Knowledge base tuning', 'Escalation logic'],
-    useCases: ['Sales qualification', 'Support triage', 'FAQ handling', 'Task orchestration'],
+      'Our three phase water level controllers with phase failure protection are built for apartments, commercial complexes, and industrial applications requiring heavy-duty pump control.',
+    keywords: ['three phase controller', 'commercial water controller', 'industrial pump controller'],
+    benefits: ['Phase failure protection', 'Overload protection', 'Heavy-duty design'],
+    deliverables: ['Controller panel', 'Sensor kit', 'Wiring diagram', 'Installation support'],
+    useCases: ['Apartments', 'Factories', 'Commercial buildings', 'Hospitals'],
     faqs: [
       {
-        question: 'How are AI agents different from chatbots?',
+        question: 'Does the three phase controller protect against phase failure?',
         answer:
-          'AI agents can take actions, use business rules, and work through multi-step tasks, while chatbots usually focus on conversation only.'
-      },
-      {
-        question: 'Can AI agents hand off to a human?',
-        answer:
-          'Yes. We include escalation paths so a human can take over whenever a conversation needs a person.'
+          'Yes. Our three phase controllers include phase failure protection, overload protection, and dry run protection to safeguard your motor.'
       }
     ]
   },
   {
-    slug: 'workflow-automation',
-    title: 'Workflow Automation',
-    headline: 'Connect your apps and automate the steps between them',
+    slug: 'wireless-controllers',
+    title: 'Wireless Controllers',
+    headline: 'No wires between floors - install in 15 minutes',
     description:
-      'We streamline approvals, notifications, data movement, and operational handoffs with reliable workflow automation.',
-    keywords: ['workflow automation', 'process automation', 'automation company India'],
-    benefits: ['Fewer errors', 'Faster handoffs', 'Cleaner operations'],
-    deliverables: ['Process audit', 'Automation blueprint', 'Integration build', 'Documentation'],
-    useCases: ['Approvals', 'Notifications', 'CRM updates', 'File handling'],
+      'Our wireless water level controllers eliminate the need for running wires between the overhead tank and the motor. Perfect for multi-story buildings and retrofits.',
+    keywords: ['wireless water level controller', 'no wire water controller', 'wireless pump controller'],
+    benefits: ['No wiring needed', 'Easy installation', 'Strong signal range'],
+    deliverables: ['Transmitter unit', 'Receiver unit', 'Sensor probes', 'Installation guide'],
+    useCases: ['Multi-story buildings', 'Apartments', 'Retrofits', 'Heritage buildings'],
     faqs: [
       {
-        question: 'What workflows can be automated?',
+        question: 'How far does the wireless signal work?',
         answer:
-          'Almost any repetitive workflow can be automated, including lead routing, reminders, updates, approvals, and syncs between systems.'
+          'Our wireless controllers have a range of up to 100 meters through walls and multiple floors, making them suitable for most residential and commercial buildings.'
       }
     ]
   },
   {
-    slug: 'whatsapp-automation',
-    title: 'WhatsApp Automation',
-    headline: 'Use WhatsApp to respond faster and capture more leads',
+    slug: 'borewell-protection',
+    title: 'Borewell Protection',
+    headline: 'Protect your expensive borewell pump from dry running',
     description:
-      'We build WhatsApp automation for instant replies, lead capture, follow-ups, and conversational support.',
-    keywords: ['WhatsApp automation', 'WhatsApp chatbot', 'lead automation'],
-    benefits: ['Instant replies', 'Better lead capture', 'Reduced response time'],
-    deliverables: ['Message flows', 'Lead routing', 'Template setup', 'Human handoff'],
-    useCases: ['Inquiry handling', 'Order updates', 'Appointment reminders', 'Customer support'],
+      'Our borewell dry run protection systems detect low water levels and automatically shut off the pump to prevent motor burnout and expensive repairs.',
+    keywords: ['borewell protection', 'dry run protection', 'motor protection system'],
+    benefits: ['Prevents motor burnout', 'Saves repair costs', 'Automatic shutdown'],
+    deliverables: ['Protection unit', 'Flow sensor', 'Installation kit', 'Warranty'],
+    useCases: ['Borewell pumps', 'Agricultural pumps', 'Farm water supply', 'Industrial wells'],
     faqs: [
       {
-        question: 'Can WhatsApp automation work with my CRM?',
+        question: 'What happens when the borewell runs dry?',
         answer:
-          'Yes. We can connect WhatsApp conversations to your CRM so leads and conversations stay in sync.'
+          'The protection system detects the drop in water flow and automatically switches off the motor within seconds, preventing dry run damage.'
       }
     ]
   },
   {
-    slug: 'crm-automation',
-    title: 'CRM Automation',
-    headline: 'Keep your CRM updated without manual data entry',
+    slug: 'gsm-pump-controller',
+    title: 'GSM Pump Controller',
+    headline: 'Control your water pump from anywhere using your phone',
     description:
-      'We automate lead capture, lead scoring, pipeline updates, notifications, and follow-up tasks inside your CRM.',
-    keywords: ['CRM automation', 'CRM integration', 'sales automation'],
-    benefits: ['Cleaner CRM data', 'Better follow-up', 'Improved visibility'],
-    deliverables: ['CRM mapping', 'Pipeline automation', 'Lead scoring', 'Reporting setup'],
-    useCases: ['Sales handoff', 'Follow-up tasks', 'Deal stage updates', 'Customer lifecycle alerts'],
+      'Our GSM mobile pump controller lets you start, stop, and monitor your water pump remotely using SMS commands. Works even in areas without internet.',
+    keywords: ['GSM pump controller', 'SMS pump control', 'remote pump controller'],
+    benefits: ['Remote control via SMS', 'Works without internet', 'Real-time status alerts'],
+    deliverables: ['GSM controller unit', 'SIM card slot', 'Mobile app access', 'Installation guide'],
+    useCases: ['Farm pumps', 'Remote locations', 'Multiple pump sites', 'Vacation homes'],
     faqs: [
       {
-        question: 'Which CRMs do you support?',
+        question: 'Do I need internet for the GSM controller?',
         answer:
-          'We can integrate with popular CRMs and adapt the automation to your sales process and tooling.'
+          'No. The GSM controller works with SMS commands, so it works in any area with mobile network coverage, even without internet access.'
       }
     ]
   },
   {
-    slug: 'business-process-automation',
-    title: 'Business Process Automation',
-    headline: 'Automate operations across teams, tools, and departments',
+    slug: 'iot-smart-controllers',
+    title: 'IoT Smart Controllers',
+    headline: 'Smart water management with cloud monitoring and analytics',
     description:
-      'From internal requests to operations handoffs, we automate business processes that slow teams down.',
-    keywords: ['business process automation', 'automation consulting', 'operations automation'],
-    benefits: ['Less admin work', 'More visibility', 'Stronger team productivity'],
-    deliverables: ['Process discovery', 'Automation plan', 'Cross-team workflows', 'QA and monitoring'],
-    useCases: ['HR requests', 'Finance approvals', 'Operations tracking', 'Admin automation'],
+      'Our IoT smart water controllers provide real-time monitoring, cloud-based dashboards, mobile app control, and automated scheduling for advanced water management.',
+    keywords: ['IoT water controller', 'smart water management', 'cloud water monitoring'],
+    benefits: ['Cloud dashboard', 'Mobile app control', 'Usage analytics'],
+    deliverables: ['IoT controller', 'Cloud account', 'Mobile app', 'Setup support'],
+    useCases: ['Smart homes', 'Corporate offices', 'Smart cities', 'Water utilities'],
     faqs: [
       {
-        question: 'Do you help identify what to automate?',
+        question: 'What features does the IoT dashboard provide?',
         answer:
-          'Yes. We start with a process review to find the highest-impact tasks that are worth automating first.'
+          'The IoT dashboard shows real-time water levels, pump status, usage history, alerts, and allows you to set automation schedules and notifications.'
       }
     ]
   },
   {
-    slug: 'ai-chatbots',
-    title: 'AI Chatbots',
-    headline: 'Create helpful chatbots that answer, guide, and convert',
+    slug: 'apartment-automation',
+    title: 'Apartment Water Automation',
+    headline: 'Centralized water management for multi-unit residential buildings',
     description:
-      'We build AI chatbots for websites and messaging channels that can answer questions and move users to the next step.',
-    keywords: ['AI chatbots', 'website chatbot', 'conversational AI'],
-    benefits: ['24/7 answers', 'Better conversions', 'Less support load'],
-    deliverables: ['Conversation design', 'Knowledge base setup', 'Website embed', 'Analytics'],
-    useCases: ['Lead capture', 'Support FAQ', 'Product guidance', 'Appointment booking'],
+      'Our apartment water automation systems provide centralized monitoring and control of water supply for individual units, common areas, and overhead tanks in apartment complexes.',
+    keywords: ['apartment water automation', 'society water management', 'multi-unit water controller'],
+    benefits: ['Centralized monitoring', 'Individual unit control', 'Overflow prevention'],
+    deliverables: ['Central panel', 'Individual controllers', 'Monitoring system', 'Installation'],
+    useCases: ['Apartment complexes', 'Housing societies', 'Gated communities', 'Townships'],
     faqs: [
       {
-        question: 'Can the chatbot be customized to our brand voice?',
+        question: 'Can each apartment have separate water control?',
         answer:
-          'Yes. We tailor the chatbot tone, responses, and escalation rules to match your brand and business goals.'
+          'Yes. Our system allows individual water level monitoring and control for each apartment unit while providing centralized monitoring at the security or admin office.'
       }
     ]
   },
   {
-    slug: 'custom-ai-solutions',
-    title: 'Custom AI Solutions',
-    headline: 'Build a custom AI system around your exact workflow',
+    slug: 'industrial-automation',
+    title: 'Industrial Water Automation',
+    headline: 'Robust water management systems for factories and plants',
     description:
-      'If you need something beyond standard templates, we design custom AI solutions for your business.',
-    keywords: ['custom AI solutions', 'AI consulting', 'custom automation'],
-    benefits: ['Built for your process', 'Flexible architecture', 'Long-term scalability'],
-    deliverables: ['Discovery workshop', 'Solution architecture', 'Prototype build', 'Launch support'],
-    useCases: ['Specialized workflows', 'Internal tools', 'Niche automations', 'Industry-specific needs'],
+      'Our industrial water automation solutions handle high-volume water management for manufacturing plants, chemical factories, textile mills, and other industrial facilities.',
+    keywords: ['industrial water automation', 'factory water management', 'plant water controller'],
+    benefits: ['High-volume handling', 'Industrial grade components', 'Custom solutions'],
+    deliverables: ['Custom control panel', 'Industrial sensors', 'SCADA integration', 'Commissioning'],
+    useCases: ['Manufacturing plants', 'Textile mills', 'Chemical factories', 'Food processing'],
     faqs: [
       {
-        question: 'Do you build from scratch?',
+        question: 'Can you customize the solution for our factory?',
         answer:
-          'Yes. When off-the-shelf tools are not enough, we create a custom solution that fits your workflow and scale.'
+          'Yes. We design custom industrial water automation solutions based on your specific requirements, including SCADA integration and custom control logic.'
       }
     ]
   }
@@ -163,51 +158,50 @@ export const homeServices = serviceCatalog.map(({ slug, title, headline, descrip
 }));
 
 export const homeUseCases = [
-  { title: 'Sales teams', description: 'Route leads, answer questions, and keep follow-ups moving.' },
-  { title: 'Operations teams', description: 'Automate approvals, notifications, and repeat admin tasks.' },
-  { title: 'Support teams', description: 'Use AI chatbots and agents for faster first-response handling.' },
-  { title: 'Founders and SMEs', description: 'Connect tools and save time across the business.' }
+  { title: 'Residential', description: 'Smart water level control for homes, villas, and independent buildings.' },
+  { title: 'Commercial', description: 'Reliable water management for offices, hotels, and commercial complexes.' },
+  { title: 'Industrial', description: 'Heavy-duty water automation for factories, mills, and processing plants.' },
+  { title: 'Agricultural', description: 'Borewell protection and pump automation for farms and agriculture.' }
 ];
 
 export const whyChoosePoints = [
   {
-    title: 'Built for business outcomes',
-    description: 'We focus on measurable workflow improvements, not just technical demos.'
+    title: 'High Quality Manufacturing',
+    description: 'Every product is manufactured with premium components and rigorous quality checks.'
   },
   {
-    title: 'Custom to your stack',
-    description: 'We adapt to the tools and processes you already use.'
+    title: 'Made in India',
+    description: 'Proudly designed and manufactured in Coimbatore, Tamil Nadu for Indian conditions.'
   },
   {
-    title: 'Production-ready setup',
-    description: 'We plan for retries, handoff logic, logging, and maintainability.'
+    title: 'Advanced Technology',
+    description: 'We use the latest microcontroller and wireless technology for smart water management.'
   },
   {
-    title: 'Scalable from day one',
-    description: 'The automation architecture is designed to grow with your business.'
+    title: 'Affordable Pricing',
+    description: 'Premium quality water automation solutions at prices that fit every budget.'
   }
 ];
 
 export const aiAutomationFaqs = [
   {
-    question: 'What types of businesses do you help?',
+    question: 'What types of water level controllers do you manufacture?',
     answer:
-      'We help businesses that want to automate lead handling, support, internal operations, WhatsApp workflows, CRM updates, and custom business processes.'
+      'We manufacture single phase, three phase, wireless, GSM-enabled, and IoT smart water level controllers for residential, commercial, industrial, and agricultural applications.'
   },
   {
-    question: 'Do you offer WhatsApp automation and AI chatbots?',
+    question: 'Do you provide borewell dry run protection?',
     answer:
-      'Yes. We build WhatsApp automation, AI chatbots, and AI agents that can answer, route, and qualify conversations.'
+      'Yes. Our borewell protection systems detect low water levels and automatically shut off the pump to prevent motor damage from dry running.'
   },
   {
-    question: 'Can you integrate with CRM tools?',
+    question: 'Can I control my pump remotely?',
     answer:
-      'Yes. CRM integration and automation are core parts of the solutions we design.'
+      'Yes. Our GSM and IoT smart controllers allow you to monitor and control your water pump from anywhere using your mobile phone.'
   },
   {
-    question: 'Do you build custom AI solutions?',
+    question: 'Do you offer apartment water automation?',
     answer:
-      'Yes. We design custom AI solutions when your workflow needs a tailored approach instead of a standard template.'
+      'Yes. We provide centralized water automation systems for apartment complexes with individual unit monitoring and centralized management.'
   }
 ];
-

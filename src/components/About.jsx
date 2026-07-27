@@ -2,10 +2,10 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 const values = [
-  { icon: '🧠', title: 'AI Strategy', desc: 'We map the business workflow before we build, so automation solves the right problem.' },
-  { icon: '🔗', title: 'Integrations', desc: 'We connect your CRM, WhatsApp, inbox, forms, and internal tools into one workflow.' },
-  { icon: '🚀', title: 'Launch Ready', desc: 'We design systems with testing, handoff logic, and maintainability in mind.' },
-  { icon: '🤝', title: 'Support', desc: 'We stay involved through launch so your team can adopt the automation smoothly.' }
+  { icon: '💧', title: 'Water Management', desc: 'We specialize in smart water level control and automation for every application type.' },
+  { icon: '🔬', title: 'Innovation', desc: 'We use the latest microcontroller and wireless technology for reliable water automation.' },
+  { icon: '🏭', title: 'Manufacturing', desc: 'All products are designed and manufactured in-house at our Coimbatore facility.' },
+  { icon: '🤝', title: 'Support', desc: 'Our technical team provides installation guidance and after-sales support nationwide.' }
 ];
 
 export default function About() {
@@ -33,16 +33,16 @@ export default function About() {
                     </div>
                     <div>
                       <div className="text-white font-bold font-display text-xl">Laksh Automations</div>
-                      <div className="text-secondary-400 text-sm">AI Automation Specialists</div>
+                      <div className="text-secondary-400 text-sm">Water Automation Specialists</div>
                     </div>
                   </div>
 
                   {/* Progress bars */}
                   {[
-                    { label: 'Workflow Clarity', pct: 98 },
-                    { label: 'Integration Readiness', pct: 96 },
-                    { label: 'Launch Reliability', pct: 95 },
-                    { label: 'Ongoing Support', pct: 99 }
+                    { label: 'Product Quality', pct: 98 },
+                    { label: 'Customer Satisfaction', pct: 99 },
+                    { label: 'Installation Success', pct: 96 },
+                    { label: 'After-Sales Support', pct: 97 }
                   ].map((item, i) => (
                     <div key={i} className="mb-5">
                       <div className="flex justify-between mb-1">
@@ -65,8 +65,8 @@ export default function About() {
 
               {/* Floating badge */}
               <div className="absolute -bottom-5 -right-5 bg-gradient-to-br from-primary-500 to-secondary-500 text-white rounded-2xl p-5 shadow-glow">
-                <div className="text-3xl font-display font-black">1</div>
-                <div className="text-xs font-medium opacity-90">Focused Brand</div>
+                <div className="text-3xl font-display font-black">15+</div>
+                <div className="text-xs font-medium opacity-90">Years Experience</div>
               </div>
             </div>
           </motion.div>
@@ -79,14 +79,14 @@ export default function About() {
           >
             <div className="badge-water mb-5">About Us</div>
             <h2 className="section-heading mb-5">
-              Pioneers in Smart{' '}
-              <span style={{ color: '#0077FF' }}>Automation</span>
+              Leading Manufacturer of{' '}
+              <span style={{ color: '#0077FF' }}>Water Level Controllers</span>
             </h2>
             <p className="section-subheading mb-6">
-              Founded in Coimbatore, Tamil Nadu, Laksh Automations builds AI automation systems for growing businesses across India. We help teams reduce repetitive work, connect tools, and respond faster with AI agents, chatbots, and workflow automation.
+              Founded in Coimbatore, Tamil Nadu, Laksh Automations is a leading manufacturer of automatic water level controllers and water automation solutions. We help homes, apartments, industries, and farms manage water efficiently with our reliable and affordable products.
             </p>
             <p className="section-subheading mb-8">
-              Every solution is designed around your process, your stack, and your business goals so the automation actually gets used.
+              Every product is designed and manufactured in India with advanced technology to deliver smart control and sure protection for your water management needs.
             </p>
 
             <div className="grid grid-cols-2 gap-5">

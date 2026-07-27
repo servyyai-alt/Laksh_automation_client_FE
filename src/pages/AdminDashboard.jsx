@@ -227,7 +227,7 @@ export default function AdminDashboard() {
 
   return (
     <>
-      <Seo title="Admin Dashboard" description="Manage products and enquiries for Laksh Automations." noindex />
+      <Seo title="Admin Dashboard" description="Manage products and enquiries for Laksh Automations." canonical="/admin" noindex />
       <div className="min-h-screen" style={{ background: '#F4FBFF' }}>
       {/* Header */}
       <div style={{ background: 'linear-gradient(135deg, #0A1628, #0D2347)' }} className="border-b border-white/10">

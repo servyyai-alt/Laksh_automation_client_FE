@@ -2,14 +2,14 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 const apps = [
-  { icon: '🏢', title: 'Sales Teams', desc: 'Qualify leads, route conversations, and keep follow-ups on track.', color: '#0077FF' },
-  { icon: '🛎️', title: 'Support Teams', desc: 'Answer common questions faster with chatbots and AI agents.', color: '#00B4D8' },
-  { icon: '📈', title: 'Operations', desc: 'Automate approvals, task updates, and cross-team handoffs.', color: '#48CAE4' },
-  { icon: '💬', title: 'WhatsApp', desc: 'Turn WhatsApp into a high-speed communication and lead capture channel.', color: '#0096C7' },
-  { icon: '🧩', title: 'CRM Workflows', desc: 'Keep your CRM data clean with consistent automation logic.', color: '#0077FF' },
-  { icon: '🧠', title: 'Custom AI', desc: 'Build tailored systems for internal tools and unique business processes.', color: '#00B4D8' },
-  { icon: '🏭', title: 'SMEs', desc: 'Use automation to scale without adding manual overhead.', color: '#48CAE4' },
-  { icon: '🌍', title: 'India', desc: 'Solutions designed for Indian businesses and real-world workflows.', color: '#0096C7' }
+  { icon: '🏠', title: 'Residential Buildings', desc: 'Automatic water level control for independent homes and residential complexes.', color: '#0077FF' },
+  { icon: '🏢', title: 'Apartments', desc: 'Multi-floor water management solutions for apartment communities.', color: '#00B4D8' },
+  { icon: '🏭', title: 'Industries', desc: 'Heavy-duty water automation for industrial plants and manufacturing units.', color: '#48CAE4' },
+  { icon: '🏫', title: 'Schools & Colleges', desc: 'Reliable water level management for educational institutions.', color: '#0096C7' },
+  { icon: '🏨', title: 'Hotels', desc: 'Continuous water supply automation for hospitality businesses.', color: '#0077FF' },
+  { icon: '🏥', title: 'Hospitals', desc: 'Uninterrupted water management for critical healthcare facilities.', color: '#00B4D8' },
+  { icon: '🚜', title: 'Agriculture & Farms', desc: 'Smart irrigation and borewell protection for agricultural operations.', color: '#48CAE4' },
+  { icon: '🏢', title: 'Commercial Complexes', desc: 'Centralized water automation for offices and commercial buildings.', color: '#0096C7' }
 ];
 
 export default function Applications() {
@@ -24,12 +24,12 @@ export default function Applications() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <div className="badge-water mb-4 mx-auto w-fit">Use Cases</div>
+          <div className="badge-water mb-4 mx-auto w-fit">Applications</div>
           <h2 className="section-heading mb-4">
-            AI Automation for <span style={{ color: '#0077FF' }}>Every Team</span>
+            Where Our <span style={{ color: '#0077FF' }}>Products</span> Are Used
           </h2>
           <p className="section-subheading mx-auto text-center">
-            From lead handling to internal operations, our automation services are designed for the places where teams lose the most time.
+            Our automatic water level controllers are trusted across residential, commercial, industrial, and agricultural applications.
           </p>
         </motion.div>
 
@@ -68,8 +68,8 @@ export default function Applications() {
             <div className="absolute top-0 right-0 w-64 h-64 rounded-full opacity-10" style={{ background: 'radial-gradient(circle, #48CAE4, transparent)' }} />
           </div>
           <div className="relative z-10">
-            <h3 className="font-display text-2xl font-bold mb-3">Don't see your use case?</h3>
-            <p className="text-white/80 mb-6">We build custom AI solutions for workflows that don’t fit standard templates.</p>
+            <h3 className="font-display text-2xl font-bold mb-3">Looking for a Custom Solution?</h3>
+            <p className="text-white/80 mb-6">We provide water automation solutions tailored to your specific application and requirements.</p>
             <a
               href="#contact"
               onClick={(e) => { e.preventDefault(); document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' }); }}

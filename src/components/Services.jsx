@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom';
 import { homeServices } from '../data/services';
 
 const iconMap = {
-  'ai-automation': '⚙️',
-  'ai-agents': '🤖',
-  'workflow-automation': '🔁',
-  'whatsapp-automation': '💬',
-  'crm-automation': '📈',
-  'business-process-automation': '🧩',
-  'ai-chatbots': '💡',
-  'custom-ai-solutions': '🛠️'
+  'single-phase-controllers': '💧',
+  'three-phase-controllers': '⚡',
+  'wireless-controllers': '📡',
+  'borewell-protection': '🛡️',
+  'gsm-pump-controller': '📱',
+  'iot-smart-controllers': '🌐',
+  'apartment-automation': '🏢',
+  'industrial-automation': '🏭'
 };
 
 export default function Services() {
@@ -26,12 +26,12 @@ export default function Services() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <div className="badge-water mb-4 mx-auto w-fit">Services</div>
+          <div className="badge-water mb-4 mx-auto w-fit">Products</div>
           <h2 className="section-heading mb-4">
-            AI Automation Services Built for <span style={{ color: '#0077FF' }}>Business Growth</span>
+            Complete Range of <span style={{ color: '#0077FF' }}>Water Automation Solutions</span>
           </h2>
           <p className="section-subheading mx-auto text-center">
-            From AI agents and WhatsApp automation to CRM integrations and custom workflows, we build systems that save time and improve response speed.
+            From single phase home controllers to industrial-grade automation systems, we have the right water management solution for every application.
           </p>
         </motion.div>
 
@@ -45,7 +45,7 @@ export default function Services() {
               transition={{ duration: 0.4, delay: i * 0.06 }}
               whileHover={{ y: -6, boxShadow: '0 18px 40px rgba(0,119,255,0.10)' }}
             >
-              <div className="text-3xl mb-4">{iconMap[service.slug] || '⚡'}</div>
+              <div className="text-3xl mb-4">{iconMap[service.slug] || '💧'}</div>
               <h3 className="font-display font-bold text-dark-navy text-base mb-2">{service.title}</h3>
               <p className="text-gray-500 text-sm leading-relaxed mb-4">{service.description}</p>
               <Link
@@ -70,11 +70,10 @@ export default function Services() {
           transition={{ duration: 0.4, delay: 0.3 }}
         >
           <Link to="/services" className="btn-aqua inline-flex">
-            View All Services
+            View All Products
           </Link>
         </motion.div>
       </div>
     </section>
   );
 }
-

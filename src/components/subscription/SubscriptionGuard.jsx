@@ -19,6 +19,9 @@ const StatusShell = ({ children }) => (
       <img
         src={webbyLogo}
         alt="Webby Logo"
+        title="Webby Logo"
+        width="192"
+        height="64"
         className="subscription-logo-img"
       />
     </div>

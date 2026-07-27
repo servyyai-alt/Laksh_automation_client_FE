@@ -1,26 +1,41 @@
-const configuredSiteUrl = String(import.meta.env.VITE_SITE_URL || 'https://www.lakshautomations.in').trim();
+const CANONICAL_SITE_URL = 'https://lakshautomations.in';
 
-export const siteUrl = configuredSiteUrl.replace(/\/+$/, '');
+const normalizeHost = (url) =>
+  String(url || '')
+    .trim()
+    .replace(/^http:\/\/www\.lakshautomations\.in/i, 'https://lakshautomations.in')
+    .replace(/^https:\/\/www\.lakshautomations\.in/i, 'https://lakshautomations.in')
+    .replace(/^http:\/\/lakshautomations\.in/i, 'https://lakshautomations.in')
+    .replace(/\/+$/, '');
+
+const configuredSiteUrl = normalizeHost(import.meta.env.VITE_SITE_URL || CANONICAL_SITE_URL);
+
+export const siteUrl = configuredSiteUrl || CANONICAL_SITE_URL;
 
 export const siteName = 'Laksh Automations';
 
-export const defaultTitle = 'Laksh Automations | AI Automation, AI Agents & Business Workflow Automation';
+export const defaultTitle = 'Laksh Automations | Automatic Water Level Controller Manufacturer Coimbatore';
 
 export const defaultDescription =
-  'Laksh Automations helps businesses automate workflows using AI Agents, WhatsApp Automation, CRM integrations, AI Chatbots, and custom AI solutions.';
+  'Leading manufacturer of automatic water level controllers, wireless water level controllers, borewell protection systems, and water automation solutions in Coimbatore, Tamil Nadu.';
 
 export const defaultKeywords = [
-  'Laksh Automations',
-  'AI Automation',
-  'AI Agents',
-  'Workflow Automation',
-  'Business Automation',
-  'CRM Automation',
-  'WhatsApp Automation',
-  'AI Chatbots',
-  'Business Process Automation',
-  'Custom AI Solutions',
-  'Automation Company India'
+  'Automatic Water Level Controller',
+  'Water Pump Controller Manufacturer',
+  'Water Level Controller Coimbatore',
+  'Automatic Motor Controller',
+  'Wireless Water Level Controller',
+  'Tank Overflow Prevention System',
+  'Borewell Protection System',
+  'Motor Protection Controller',
+  'Industrial Water Automation',
+  'Agricultural Pump Controller',
+  'Smart Water Management System',
+  'Water Tank Controller',
+  'Pump Automation Controller',
+  'Digital Water Level Indicator',
+  'Three Phase Pump Controller',
+  'Single Phase Pump Controller'
 ].join(', ');
 
 export const contactDetails = {
@@ -42,11 +57,15 @@ export const contactDetails = {
 
 export function absoluteUrl(path = '') {
   if (!path) return siteUrl;
-  if (path.startsWith('http://') || path.startsWith('https://')) return path;
+  if (path.startsWith('http://') || path.startsWith('https://')) return normalizeHost(path);
   return `${siteUrl}${path.startsWith('/') ? path : `/${path}`}`;
 }
 
 export function canonicalUrl(path = '/') {
   const cleanPath = path === '/' ? '/' : `/${path.replace(/^\/+/, '')}`;
   return absoluteUrl(cleanPath);
+}
+
+export function normalizeCanonicalUrl(url = '') {
+  return normalizeHost(url) || siteUrl;
 }

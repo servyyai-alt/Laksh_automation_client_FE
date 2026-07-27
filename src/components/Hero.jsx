@@ -2,12 +2,12 @@ import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
 const highlights = [
-  { icon: '⚡', text: 'AI Workflow Automation' },
-  { icon: '🤖', text: 'AI Agents' },
-  { icon: '💬', text: 'WhatsApp Automation' },
-  { icon: '📈', text: 'CRM Integrations' },
-  { icon: '🧠', text: 'AI Chatbots' },
-  { icon: '🇮🇳', text: 'Made for India' }
+  { icon: '💧', text: 'Single Phase Controllers' },
+  { icon: '⚡', text: 'Three Phase Controllers' },
+  { icon: '📡', text: 'Wireless Controllers' },
+  { icon: '🛡️', text: 'Borewell Protection' },
+  { icon: '📱', text: 'GSM Pump Controller' },
+  { icon: '🇮🇳', text: 'Made in India' }
 ];
 
 const Counter = ({ target, suffix = '' }) => {
@@ -95,18 +95,18 @@ export default function Hero() {
                 <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2C12 2 4 8.5 4 14a8 8 0 0016 0C20 8.5 12 2 12 2Z"/>
                 </svg>
-                AI Automation Company India
+                Water Level Controller Manufacturer
               </div>
 
               <h1 className="font-display text-white leading-tight mb-4" style={{ fontSize: 'clamp(32px, 5vw, 58px)', fontWeight: 800 }}>
                 <span style={{ background: 'linear-gradient(135deg, #48CAE4, #00B4D8)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-                  AI Automation,
+                  Automatic Water Level
                 </span>{' '}
-                AI Agents & Business Workflow Automation
+                Controllers & Water Automation
               </h1>
 
               <p className="text-blue-100/80 text-lg leading-relaxed mb-8" style={{ maxWidth: '520px' }}>
-                Laksh Automations helps businesses automate workflows using AI Agents, WhatsApp Automation, CRM integrations, AI Chatbots, and custom AI solutions.
+                Smart Control. Sure Protection. Leading manufacturer of automatic water level controllers, pump controllers, and water automation solutions from Coimbatore.
               </p>
 
               {/* Highlights */}
@@ -140,14 +140,14 @@ export default function Hero() {
                   Contact Us
                 </button>
                 <button
-                  onClick={() => handleNav('#services')}
+                  onClick={() => handleNav('#products')}
                   className="btn-outline-aqua"
                   style={{ borderColor: 'rgba(255,255,255,0.4)', color: 'white' }}
                 >
                   <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
                   </svg>
-                  View Services
+                  View Products
                 </button>
               </motion.div>
             </motion.div>
@@ -162,10 +162,10 @@ export default function Hero() {
           >
             <div className="grid grid-cols-2 gap-5">
               {[
-                { value: 8, suffix: '+', label: 'Core Services', icon: '🧩' },
-                { value: 24, suffix: '/7', label: 'Automation Readiness', icon: '⚡' },
-                { value: 100, suffix: '%', label: 'Custom Built', icon: '🛠️' },
-                { value: 1, suffix: '', label: 'Focused Brand', icon: '🏷️' }
+                { value: 20, suffix: '+', label: 'Product Models', icon: '📦' },
+                { value: 10000, suffix: '+', label: 'Happy Customers', icon: '😊' },
+                { value: 15, suffix: '+', label: 'Years Experience', icon: '🏆' },
+                { value: 500, suffix: '+', label: 'Five-Star Reviews', icon: '⭐' }
               ].map((stat, i) => (
                 <motion.div
                   key={i}

@@ -22,7 +22,7 @@ export default function ServicePage({ service }) {
   return (
     <>
       <Seo
-        title={service.title}
+        title={`${service.title} | Laksh Automations`}
         description={service.description}
         canonical={`/services/${service.slug}`}
         jsonLd={[
@@ -41,7 +41,7 @@ export default function ServicePage({ service }) {
           }),
           breadcrumbSchema([
             { name: 'Home', path: '/' },
-            { name: 'Services', path: '/services' },
+            { name: 'Products', path: '/services' },
             { name: service.title, path: `/services/${service.slug}` }
           ]),
           faqSchema(faqItems)
@@ -57,7 +57,7 @@ export default function ServicePage({ service }) {
 
           <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <Link to="/services" className="text-secondary-300 text-sm font-medium mb-6 inline-flex">
-              ← Back to Services
+              ← Back to Products
             </Link>
             <div className="badge-water mb-4 w-fit" style={{ background: 'rgba(72, 202, 228, 0.15)', color: '#48CAE4', borderColor: 'rgba(72, 202, 228, 0.3)' }}>
               {service.title}
@@ -97,7 +97,7 @@ export default function ServicePage({ service }) {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.45, delay: 0.05 }}
               >
-                <h2 className="font-display font-bold text-2xl text-dark-navy mb-5">Why It Works</h2>
+                <h2 className="font-display font-bold text-2xl text-dark-navy mb-5">Key Benefits</h2>
                 <div className="space-y-4">
                   {service.benefits.map((item) => (
                     <div key={item} className="p-4 rounded-2xl bg-[#F4FBFF] border border-primary-100">
@@ -115,16 +115,16 @@ export default function ServicePage({ service }) {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-10 items-start">
               <div>
-                <div className="badge-water mb-4 w-fit">Use Cases</div>
-                <h2 className="section-heading mb-4">Best For Teams That Need <span style={{ color: '#0077FF' }}>Speed and Consistency</span></h2>
+                <div className="badge-water mb-4 w-fit">Applications</div>
+                <h2 className="section-heading mb-4">Best For <span style={{ color: '#0077FF' }}>These Applications</span></h2>
                 <p className="section-subheading mb-6">
-                  These are the common business situations where this service creates the biggest impact.
+                  These are the common use cases where this product creates the biggest impact.
                 </p>
                 <div className="grid sm:grid-cols-2 gap-4">
                   {service.useCases.map((item) => (
                     <div key={item} className="bg-white rounded-2xl p-5 border border-primary-100">
                       <h3 className="font-semibold text-dark-navy mb-1">{item}</h3>
-                      <p className="text-sm text-gray-500">Reduce manual handling and keep the process moving.</p>
+                      <p className="text-sm text-gray-500">Reliable water management for this application type.</p>
                     </div>
                   ))}
                 </div>
@@ -151,17 +151,17 @@ export default function ServicePage({ service }) {
         <section className="py-16">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="section-heading mb-4">
-              Ready to build your <span style={{ color: '#0077FF' }}>automation plan</span>?
+              Ready to <span style={{ color: '#0077FF' }}>get started</span>?
             </h2>
             <p className="section-subheading mx-auto mb-8">
-              Talk to Laksh Automations about the workflow, AI agent, or chatbot you want to launch next.
+              Talk to Laksh Automations about the right water management solution for your needs.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link to="/#contact" className="btn-aqua">
-                Start a Project
+                Contact Us
               </Link>
               <Link to="/services" className="btn-outline-aqua">
-                Explore All Services
+                View All Products
               </Link>
             </div>
           </div>
@@ -174,4 +174,3 @@ export default function ServicePage({ service }) {
 export function findServiceBySlug(slug) {
   return serviceCatalog.find((item) => item.slug === slug);
 }
-

@@ -131,7 +131,7 @@ const SubscriptionExpired = ({ status = 'suspended' }) => {
 
             {/* Logo at Top Center */}
             <div className="subscription-top-logo">
-                <img src={webbyLogo} alt="Webby Logo" className="subscription-logo-img" />
+                <img src={webbyLogo} alt="Webby Logo" title="Webby Logo" width="192" height="64" className="subscription-logo-img" />
             </div>
 
             {/* Main Content Area */}
