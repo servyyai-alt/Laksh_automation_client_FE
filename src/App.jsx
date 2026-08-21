@@ -3,8 +3,14 @@ import { Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 
 const Home = lazy(() => import('./pages/Home'));
+const Products = lazy(() => import('./pages/Products'));
 const Services = lazy(() => import('./pages/Services'));
 const ServiceDetail = lazy(() => import('./pages/ServiceDetail'));
+const Applications = lazy(() => import('./pages/Applications'));
+const Results = lazy(() => import('./pages/Results'));
+const AboutPage = lazy(() => import('./pages/AboutPage'));
+const WhyUsPage = lazy(() => import('./pages/WhyUsPage'));
+const ContactPage = lazy(() => import('./pages/ContactPage'));
 const Terms = lazy(() => import('./pages/Terms'));
 const Privacy = lazy(() => import('./pages/Privacy'));
 const AdminLogin = lazy(() => import('./pages/AdminLogin'));
@@ -26,8 +32,14 @@ export default function App() {
       <Suspense fallback={<Loader />}>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/products" element={<Products />} />
           <Route path="/services" element={<Services />} />
           <Route path="/services/:slug" element={<ServiceDetail />} />
+          <Route path="/applications" element={<Applications />} />
+          <Route path="/why-us" element={<WhyUsPage />} />
+          <Route path="/results" element={<Results />} />
+          <Route path="/contact" element={<ContactPage />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/admin/login" element={<AdminLogin />} />

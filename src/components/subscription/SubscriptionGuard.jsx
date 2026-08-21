@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { RefreshCw } from "lucide-react";
-import webbyLogo from "./webby.png";
+import logo from "../../assets/logo.png";
 import SubscriptionExpired from "./SubscriptionExpried";
 import { getSubscriptionStatus } from "../../utils/subscriptionApi";
 import {
-  getWebsiteName,
   getSubscriptionConfig,
   isSubscriptionAllowed,
   isSubscriptionBlocked,
@@ -13,40 +12,39 @@ import {
 import "./SubscriptionExpired.css";
 
 const StatusShell = ({ children }) => (
-  <div className="subscription-expired-root">
-    <div className="bg-blueprint" />
-    <div className="subscription-top-logo">
-      <img
-        src={webbyLogo}
-        alt="Webby Logo"
-        title="Webby Logo"
-        width="192"
-        height="64"
-        className="subscription-logo-img"
-      />
+  <div className="subscription-expired-root min-h-screen flex flex-col items-center justify-center p-6 bg-[#F4FBFF] relative overflow-hidden">
+    <div className="bg-blueprint pointer-events-none opacity-40" />
+    <div className="subscription-top-logo mb-8 z-10">
+      <div className="p-3 sm:p-4 bg-white rounded-2xl border-2 border-[#0077FF] shadow-[0_8px_30px_rgba(0,119,255,0.2)] inline-flex items-center justify-center">
+        <img
+          src={logo}
+          alt="Laksh Automations"
+          title="Laksh Automations"
+          className="h-20 sm:h-28 w-auto object-contain"
+        />
+      </div>
     </div>
-    <div className="subscription-content">{children}</div>
+    <div className="subscription-content z-10">{children}</div>
   </div>
 );
 
 const LoadingScreen = () => {
-  const websiteName = getWebsiteName();
   return (
     <StatusShell>
       <motion.div
-        initial={{ opacity: 0, y: 18 }}
+        initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.45 }}
-        className="flex flex-col items-center w-full"
+        className="flex flex-col items-center w-full max-w-md text-center"
       >
-        <div className="mx-auto mb-10 h-14 w-14 animate-spin rounded-full border-4 border-[#3B82F6]/20 border-t-[#3B82F6] shadow-[0_0_20px_rgba(59,130,246,0.15)]" />
+        <div className="mx-auto mb-6 h-12 w-12 animate-spin rounded-full border-4 border-[#0077FF]/20 border-t-[#0077FF] shadow-[0_0_20px_rgba(0,119,255,0.2)]" />
 
-        <h1 className="subscription-heading">
-          Authenticating System
+        <h1 className="font-display font-black text-2xl sm:text-3xl text-[#0A1628] tracking-wider mb-2">
+          LAKSH AUTOMATIONS
         </h1>
 
-        <p className="subscription-description">
-          Verifying your {websiteName} subscription and establishing secure connection with Webby servers.
+        <p className="text-sm sm:text-base font-semibold text-[#0077FF] tracking-wide">
+          Water Automation Specialists
         </p>
       </motion.div>
     </StatusShell>
@@ -71,7 +69,7 @@ const ErrorScreen = ({ onRetry, message }) => (
       </h1>
 
       <p className="subscription-description">
-        Unable to verify subscription status with the licensing server.
+        Unable to verify system connection with the server.
       </p>
 
       {message ? (
@@ -85,7 +83,7 @@ const ErrorScreen = ({ onRetry, message }) => (
       <button
         type="button"
         onClick={onRetry}
-        className="inline-flex items-center gap-2 rounded-xl bg-[#3B82F6] px-8 py-3.5 text-[15px] font-semibold text-white shadow-[0_4px_14px_rgba(59,130,246,0.25)] hover:bg-[#2563EB] hover:shadow-[0_6px_20px_rgba(59,130,246,0.3)] hover:-translate-y-0.5 active:translate-y-0 transition-all cursor-pointer"
+        className="inline-flex items-center gap-2 rounded-xl bg-[#0077FF] px-8 py-3.5 text-[15px] font-semibold text-white shadow-[0_4px_14px_rgba(0,119,255,0.25)] hover:bg-[#0056b3] hover:shadow-[0_6px_20px_rgba(0,119,255,0.3)] hover:-translate-y-0.5 active:translate-y-0 transition-all cursor-pointer"
       >
         <RefreshCw size={18} />
         Retry Connection

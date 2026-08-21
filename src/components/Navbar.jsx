@@ -1,22 +1,21 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import logo from '../assets/logo.png';
 
 const navItems = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
   { label: 'Products', href: '#products' },
-  { label: 'Services', href: '/services' },
-  { label: 'Applications', href: '#use-cases' },
   { label: 'Why Us', href: '#why-us' },
-  { label: 'Results', href: '#results' },
   { label: 'Contact', href: '#contact' }
 ];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -27,13 +26,21 @@ export default function Navbar() {
   const handleAnchor = (e, href) => {
     e.preventDefault();
     setMenuOpen(false);
-    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+    if (location.pathname === '/') {
+      if (href === '#home') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      navigate('/' + href);
+    }
   };
 
   return (
     <motion.nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? 'bg-dark-navy/95 backdrop-blur-md shadow-lg border-b border-primary-500/20' : 'bg-transparent'
+        scrolled || location.pathname !== '/' ? 'bg-dark-navy/95 backdrop-blur-md shadow-lg border-b border-primary-500/20' : 'bg-transparent'
       }`}
       initial={{ y: -80 }}
       animate={{ y: 0 }}
@@ -41,7 +48,7 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-18">
-          <a href="#home" onClick={(e) => handleAnchor(e, '#home')} className="flex items-center gap-3 group">
+          <Link to="/" onClick={(e) => { if (location.pathname === '/') handleAnchor(e, '#home'); }} className="flex items-center gap-3 group">
             <div className="relative bg-white p-1 rounded-xl shadow-glow">
               <img
                 src={logo}
@@ -59,7 +66,7 @@ export default function Navbar() {
               <div className="font-display font-bold text-white text-lg leading-tight">LAKSH</div>
               <div className="text-xs text-secondary-400 font-medium leading-tight tracking-widest">AUTOMATIONS</div>
             </div>
-          </a>
+          </Link>
 
           <nav className="hidden lg:flex items-center gap-7" aria-label="Primary navigation">
             {navItems.map((item) =>

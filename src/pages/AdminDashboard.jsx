@@ -6,6 +6,7 @@ import toast from 'react-hot-toast';
 import { useAuth } from '../context/AuthContext';
 import API from '../utils/api';
 import Seo from '../components/Seo';
+import logoImg from '../assets/logo.png';
 
 const TABS = ['Dashboard', 'Products', 'Enquiries'];
 
@@ -234,10 +235,13 @@ export default function AdminDashboard() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #0077FF, #00B4D8)' }}>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
-                  <path d="M12 2C12 2 4 8.5 4 14a8 8 0 0016 0C20 8.5 12 2 12 2Z"/>
-                </svg>
+              <div className="bg-white p-1 rounded-xl shadow-glow">
+                <img
+                  src={logoImg}
+                  alt="Laksh Automations logo"
+                  title="Laksh Automations logo"
+                  className="w-12 h-9 rounded-lg object-contain"
+                />
               </div>
               <span className="font-display font-bold text-white text-sm">Laksh Automations Admin</span>
             </div>

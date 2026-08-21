@@ -3,24 +3,25 @@ import { motion } from "framer-motion";
 import logo from '../assets/logo.png';
 
 const products = [
-  { label: 'Single Phase Controllers', href: '#products' },
-  { label: 'Three Phase Controllers', href: '#products' },
-  { label: 'Wireless Controllers', href: '#products' },
-  { label: 'Borewell Protection', href: '#products' },
-  { label: 'GSM Pump Controller', href: '#products' },
-  { label: 'IoT Smart Controllers', href: '#products' },
-  { label: 'Apartment Automation', href: '#products' },
-  { label: 'Industrial Automation', href: '#products' }
+  { label: 'Single Phase Controllers', href: '/products' },
+  { label: 'Three Phase Controllers', href: '/products' },
+  { label: 'Wireless Controllers', href: '/products' },
+  { label: 'Borewell Protection', href: '/products' },
+  { label: 'GSM Pump Controller', href: '/products' },
+  { label: 'IoT Smart Controllers', href: '/products' },
+  { label: 'Apartment Automation', href: '/products' },
+  { label: 'Industrial Automation', href: '/products' }
 ];
 
 const quickLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About Us", href: "#about" },
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/about" },
+  { label: "Products", href: "/products" },
   { label: "Services", href: "/services" },
-  { label: "Use Cases", href: "#use-cases" },
-  { label: "Why Choose Us", href: "#why-us" },
-  { label: "Results", href: "#results" },
-  { label: "Contact", href: "#contact" },
+  { label: "Use Cases", href: "/applications" },
+  { label: "Why Choose Us", href: "/why-us" },
+  { label: "Results", href: "/results" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const handleNav = (e, href) => {
@@ -176,24 +177,23 @@ export default function Footer() {
             <ul className="space-y-2.5">
               {quickLinks.map((link) => (
                 <li key={link.label}>
-                  <a
-                  href={link.href}
-                  onClick={link.href.startsWith('#') ? (e) => handleNav(e, link.href) : undefined}
+                  <Link
+                    to={link.href}
                     className="text-white/60 text-sm hover:text-secondary-400 transition-colors duration-200 flex items-center gap-2"
                   >
                     <span className="text-primary-500 text-xs">›</span>
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
               <li>
-                <a
-                  href="/admin/login"
+                <Link
+                  to="/admin/login"
                   className="text-white/60 text-sm hover:text-secondary-400 transition-colors duration-200 flex items-center gap-2"
                 >
                   <span className="text-primary-500 text-xs">›</span>
                   Admin Panel
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -205,16 +205,16 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2.5">
               {products.map((p) => (
-                <li key={p}>
-                  <a
-                  href={p.href}
-                  className="text-white/60 text-sm hover:text-secondary-400 transition-colors duration-200 flex items-start gap-2"
-                >
+                <li key={p.label}>
+                  <Link
+                    to={p.href}
+                    className="text-white/60 text-sm hover:text-secondary-400 transition-colors duration-200 flex items-start gap-2"
+                  >
                     <span className="text-secondary-500 text-xs mt-0.5 flex-shrink-0">
                       ›
                     </span>
                     {p.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import logo from '../assets/logo.png';
 
 const values = [
   { icon: '💧', title: 'Water Management', desc: 'We specialize in smart water level control and automation for every application type.' },
@@ -26,10 +27,8 @@ export default function About() {
               <div className="rounded-3xl overflow-hidden shadow-water" style={{ background: 'linear-gradient(135deg, #0A1628, #0D2347)' }}>
                 <div className="p-10">
                   <div className="flex items-center gap-3 mb-8">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <path d="M12 2C12 2 4 8.5 4 14a8 8 0 0016 0C20 8.5 12 2 12 2Z" fill="white"/>
-                      </svg>
+                    <div className="bg-white p-1 rounded-xl shadow-glow">
+                      <img src={logo} alt="Laksh Automations logo" className="w-14 h-11 rounded-xl object-contain" />
                     </div>
                     <div>
                       <div className="text-white font-bold font-display text-xl">Laksh Automations</div>

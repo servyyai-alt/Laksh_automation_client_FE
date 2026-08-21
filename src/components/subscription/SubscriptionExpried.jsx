@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import webbyLogo from './webby.png';
+import logo from '../../assets/logo.png';
 import ConnectorAnimation from './ConnectorAnimation';
 import './SubscriptionExpired.css';
 import {
@@ -130,8 +130,10 @@ const SubscriptionExpired = ({ status = 'suspended' }) => {
             </div>
 
             {/* Logo at Top Center */}
-            <div className="subscription-top-logo">
-                <img src={webbyLogo} alt="Webby Logo" title="Webby Logo" width="192" height="64" className="subscription-logo-img" />
+            <div className="subscription-top-logo mb-6">
+                <div className="p-3 sm:p-4 bg-white rounded-2xl border-2 border-[#0077FF] shadow-[0_8px_30px_rgba(0,119,255,0.2)] inline-flex items-center justify-center">
+                    <img src={logo} alt="Laksh Automations" title="Laksh Automations" className="h-20 sm:h-24 w-auto object-contain" />
+                </div>
             </div>
 
             {/* Main Content Area */}
@@ -149,8 +151,8 @@ const SubscriptionExpired = ({ status = 'suspended' }) => {
                 <h1 className="subscription-heading">Subscription Expired</h1>
                 
                 <p className="subscription-description">
-                    Your {websiteName} subscription has expired and access has been suspended.
-                    Please renew your subscription through Webby to restore full network connectivity and website access.
+                    Your {websiteName} subscription access requires renewal.
+                    Please contact Laksh Automations support to restore full network connectivity and website access.
                 </p>
 
                 {/* Info Cards Row */}
@@ -179,12 +181,12 @@ const SubscriptionExpired = ({ status = 'suspended' }) => {
                     </div>
                 </div>
 
-                {/* Renew Row (Static text, not interactive, cursor default) */}
+                {/* Renew Row */}
                 <div className="subscription-renew-text-row">
                     <svg className="renew-icon" viewBox="0 0 24 24" fill="none" stroke="#2563EB" strokeWidth="2.5">
                         <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67" />
                     </svg>
-                    <span className="renew-text">Renew subscription via Webby Account</span>
+                    <span className="renew-text">Contact Laksh Automations Support to Renew</span>
                 </div>
             </div>
         </div>

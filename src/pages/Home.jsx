@@ -12,11 +12,7 @@ import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import About from '../components/About';
 import Products from '../components/Products';
-import Services from '../components/Services';
-import Applications from '../components/Applications';
 import WhyChooseUs from '../components/WhyChooseUs';
-import Outcomes from '../components/Outcomes';
-import HomeSeoContent from '../components/HomeSeoContent';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
@@ -80,11 +76,7 @@ export default function Home() {
           <Hero />
           <About />
           <Products />
-          <Services />
-          <Applications />
           <WhyChooseUs />
-          <Outcomes />
-          <HomeSeoContent />
           <Contact />
         </main>
         <Footer />

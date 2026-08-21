@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import toast from 'react-hot-toast';
 import { useAuth } from '../context/AuthContext';
 import Seo from '../components/Seo';
+import logoImg from '../assets/logo.png';
 
 export default function AdminLogin() {
   const [loading, setLoading] = useState(false);
@@ -62,11 +63,8 @@ export default function AdminLogin() {
         <div className="glass-card-dark rounded-3xl p-8">
           {/* Logo */}
           <div className="flex items-center justify-center gap-3 mb-8">
-            <div className="w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: 'linear-gradient(135deg, #0077FF, #00B4D8)' }}>
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-                <path d="M12 2C12 2 4 8.5 4 14a8 8 0 0016 0C20 8.5 12 2 12 2Z" fill="white" opacity="0.9"/>
-                <path d="M12 8C12 8 8 11.5 8 14a4 4 0 008 0C16 11.5 12 8 12 8Z" fill="white" opacity="0.5"/>
-              </svg>
+            <div className="bg-white p-1 rounded-xl shadow-glow">
+              <img src={logoImg} alt="Laksh Automations logo" className="w-14 h-11 rounded-xl object-contain" />
             </div>
             <div>
               <div className="font-display font-bold text-white text-xl">LAKSH</div>

@@ -32,7 +32,7 @@ export const getSubscriptionConfig = () => {
         return {
             webbyApiUrl,
             subscriptionId,
-            error: 'Missing VITE_WEBBY_API_URL or VITE_SUBSCRIPTION_ID.',
+            error: 'Missing VITE_API_URL or VITE_SUBSCRIPTION_ID.',
         };
     }
 
