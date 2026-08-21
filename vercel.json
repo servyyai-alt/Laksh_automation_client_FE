@@ -1,4 +1,6 @@
 {
+  "installCommand": "npm install --ignore-scripts=false",
+  "buildCommand": "chmod -R +x node_modules/.bin node_modules/esbuild node_modules/@esbuild 2>/dev/null || true; vite build",
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ]
