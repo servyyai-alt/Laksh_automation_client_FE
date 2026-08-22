@@ -1,4 +1,3 @@
-import axios from "axios";
 import {
   getSubscriptionConfig,
   normalizeSubscriptionStatus,
@@ -11,9 +10,15 @@ export const getSubscriptionStatus = async () => {
     throw new Error(error);
   }
 
-  const { data } = await axios.get(
+  const response = await fetch(
     `${webbyApiUrl}/api/sites/${subscriptionId}/status`
   );
+
+  const data = await response.json();
+
+  if (!response.ok) {
+    throw new Error(data?.message || response.statusText || "Request failed");
+  }
 
   return {
     ...data,
