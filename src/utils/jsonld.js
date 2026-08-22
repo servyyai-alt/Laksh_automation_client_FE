@@ -68,7 +68,8 @@ export function productSchema({
   image = '/og-image.jpg',
   brand = siteName,
   category = 'Water Automation Product',
-  sku
+  sku,
+  offers
 }) {
   const schema = {
     '@context': 'https://schema.org',
@@ -88,6 +89,17 @@ export function productSchema({
   if (sku) {
     schema.sku = sku;
   }
+
+  schema.offers = offers || {
+    '@type': 'Offer',
+    url: canonicalUrl(path),
+    price: '0',
+    priceCurrency: 'INR',
+    availability: 'https://schema.org/InStock',
+    seller: {
+      '@id': `${siteUrl}#organization`
+    }
+  };
 
   return schema;
 }
