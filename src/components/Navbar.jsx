@@ -7,8 +7,7 @@ const navItems = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
   { label: 'Products', href: '#products' },
-  { label: 'Applications', href: '#applications' },
-  { label: 'FAQ', href: '#faq' },
+  { label: 'Why Laksh', href: '#why-choose-us' },
   { label: 'Contact', href: '#contact' }
 ];
 
