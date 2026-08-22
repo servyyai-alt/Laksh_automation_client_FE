@@ -44,12 +44,13 @@ export const contactDetails = {
   phone: '+918807500321',
   email: 'laksh10xautomations@gmail.com',
   address: {
-    streetAddress: '16/5, Sathy Main Road, Saravanampatti',
-    addressLocality: 'Coimbatore',
+    streetAddress: 'Amman Kovil Street, Muthumari, TVS Nagar - Koundampalayam Road',
+    addressLocality: 'Koundampalayam',
     addressRegion: 'Tamil Nadu',
-    postalCode: '641035',
+    postalCode: '641030',
     addressCountry: 'IN'
   },
+  formattedAddress: 'Amman Kovil Street, Muthumari, TVS Nagar - Koundampalayam Road, Koundampalayam, Coimbatore, Tamil Nadu 641030',
   geo: {
     latitude: 11.0725,
     longitude: 76.9986

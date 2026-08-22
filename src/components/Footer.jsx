@@ -174,7 +174,9 @@ export default function Footer() {
                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                   />
                 </svg>
-                {contactDetails.address.streetAddress}, {contactDetails.address.addressLocality}, {contactDetails.address.addressRegion} {contactDetails.address.postalCode}
+                <span className="max-w-[260px] leading-relaxed">
+                  {contactDetails.formattedAddress}
+                </span>
               </div>
             </div>
           </div>
@@ -253,6 +255,12 @@ export default function Footer() {
               </svg>
               WhatsApp Now
             </a>
+            <Link
+              to="/admin/login"
+              className="mt-3 flex items-center justify-center gap-2 w-full py-3 px-4 rounded-full text-sm font-semibold transition-all duration-300 border border-white/15 text-white hover:bg-white/10"
+            >
+              Admin Panel
+            </Link>
 
             <div className="mt-5 pt-5 border-t border-white/10">
               <a

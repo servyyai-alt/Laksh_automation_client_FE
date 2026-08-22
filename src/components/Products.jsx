@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import API from '../utils/api';
 
 export const featuredProducts = [
   { _id: '1', name: 'AUTO GUN + JET Automatic Water Pump Controller', category: 'Single Phase', shortDescription: 'Automatic water pump controller with motor ON/OFF control, dry run protection and tank overflow prevention for everyday water management.', features: ['Auto ON/OFF', 'Dry Run Protection', 'Overflow Prevention'] },
@@ -123,6 +124,30 @@ export default function Products() {
   const [products, setProducts] = useState(defaultProducts);
   const [activeCategory, setActiveCategory] = useState('All');
   const { ref, inView } = useInView({ threshold: 0.05, triggerOnce: true });
+
+  useEffect(() => {
+    let cancelled = false;
+
+    const loadProducts = async () => {
+      try {
+        const res = await API.get('/products?limit=100');
+        const liveProducts = Array.isArray(res.data?.data) ? res.data.data : [];
+
+        if (cancelled) return;
+        setProducts(liveProducts.length ? liveProducts : defaultProducts);
+      } catch {
+        if (!cancelled) {
+          setProducts(defaultProducts);
+        }
+      }
+    };
+
+    loadProducts();
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   const filtered = activeCategory === 'All'
     ? products

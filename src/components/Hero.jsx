@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import { contactDetails } from '../utils/site';
 
 const highlights = [
   { icon: '💧', text: 'Single Phase Controllers' },
@@ -193,7 +194,9 @@ export default function Hero() {
               </div>
               <div className="text-right">
                 <div className="text-white/60 text-xs uppercase tracking-widest mb-1">Location</div>
-                <div className="text-white font-medium text-sm">Coimbatore, Tamil Nadu, India</div>
+                <div className="text-white font-medium text-sm max-w-[220px]">
+                  {contactDetails.formattedAddress}
+                </div>
               </div>
             </div>
           </motion.div>

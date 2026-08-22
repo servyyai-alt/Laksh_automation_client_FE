@@ -4,24 +4,16 @@ import {
   localBusinessSchema,
   organizationSchema,
   pageSchema,
-  faqSchema,
-  serviceSchema,
   websiteSchema
 } from '../utils/jsonld';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import About from '../components/About';
 import Products from '../components/Products';
-import Services from '../components/Services';
-import Applications from '../components/Applications';
-import Outcomes from '../components/Outcomes';
-import HomeSeoContent, { homepageFaqs } from '../components/HomeSeoContent';
 import WhyChooseUs from '../components/WhyChooseUs';
-import { featuredProducts } from '../components/Products';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import WhatsAppButton from '../components/WhatsAppButton';
-import { productSchema } from '../utils/jsonld';
 
 export default function Home() {
   return (
@@ -44,21 +36,6 @@ export default function Home() {
             path: '/'
           }),
           breadcrumbSchema([{ name: 'Home', path: '/' }]),
-          serviceSchema({
-            name: 'Automatic Water Level Controllers & Water Automation Solutions',
-            description: 'Automatic water level controllers, automatic pump controllers, wireless controllers, borewell protection and smart water automation solutions.',
-            path: '/'
-          }),
-          faqSchema(homepageFaqs),
-          ...featuredProducts.slice(0, 4).map((product, index) =>
-            productSchema({
-              name: product.name,
-              description: product.shortDescription,
-              path: `/#featured-product-${index + 1}`,
-              category: product.category,
-              sku: product._id
-            })
-          )
         ]}
       />
       <div className="min-h-screen overflow-hidden">
@@ -67,11 +44,7 @@ export default function Home() {
           <Hero />
           <About />
           <Products />
-          <Services />
-          <Applications />
           <WhyChooseUs />
-          <Outcomes />
-          <HomeSeoContent />
           <Contact />
         </main>
         <Footer />

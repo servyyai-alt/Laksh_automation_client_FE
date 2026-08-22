@@ -86,7 +86,7 @@ export default function Contact() {
                 { icon: '📞', label: 'Phone', value: contactDetails.phoneDisplay, href: `tel:${contactDetails.phone}` },
                 { icon: '✉️', label: 'Email', value: contactDetails.email, href: `mailto:${contactDetails.email}` },
                 { icon: '🌐', label: 'Website', value: 'www.lakshautomations.in', href: 'https://www.lakshautomations.in' },
-                { icon: '📍', label: 'Address', value: `${contactDetails.address.streetAddress}, ${contactDetails.address.addressLocality}, ${contactDetails.address.addressRegion} ${contactDetails.address.postalCode}`, href: null }
+                { icon: '📍', label: 'Address', value: contactDetails.formattedAddress, href: null }
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-4 mb-5">
                   <div className="w-10 h-10 rounded-xl flex items-center justify-center text-lg flex-shrink-0" style={{ background: 'rgba(0,119,255,0.2)' }}>
