@@ -4,7 +4,7 @@ import { fileURLToPath } from 'url';
 import React, { createElement } from 'react';
 import { renderToString } from 'react-dom/server';
 import { HelmetProvider } from 'react-helmet-async';
-import { StaticRouter } from 'react-router-dom/server';
+import { StaticRouter } from 'react-router-dom/server.js';
 import { createServer } from 'vite';
 
 const __filename = fileURLToPath(import.meta.url);
