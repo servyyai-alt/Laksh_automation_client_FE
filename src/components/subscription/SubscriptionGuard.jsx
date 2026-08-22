@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { RefreshCw } from "lucide-react";
 import logo from "../../assets/logo.png";
@@ -93,6 +94,8 @@ const ErrorScreen = ({ onRetry, message }) => (
 );
 
 const SubscriptionGuard = ({ children }) => {
+  const location = useLocation();
+  const isAdminRoute = location.pathname.startsWith('/admin');
   const { error: configError } = getSubscriptionConfig();
 
   const [data, setData] = useState(null);
@@ -119,6 +122,10 @@ const SubscriptionGuard = ({ children }) => {
   };
 
   useEffect(() => {
+    if (!isAdminRoute) {
+      return;
+    }
+
     fetchStatus();
 
     const interval = setInterval(() => {
@@ -126,7 +133,11 @@ const SubscriptionGuard = ({ children }) => {
     }, 15 * 60 * 1000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [isAdminRoute]);
+
+  if (!isAdminRoute) {
+    return children;
+  }
 
   if (loading) {
     return <LoadingScreen />;

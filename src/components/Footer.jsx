@@ -76,12 +76,12 @@ export default function Footer() {
             key={i}
             className="bubble"
             style={{
-              width: `${Math.random() * 20 + 8}px`,
-              height: `${Math.random() * 20 + 8}px`,
-              left: `${Math.random() * 100}%`,
+              width: `${8 + ((i * 5) % 20)}px`,
+              height: `${8 + ((i * 7) % 20)}px`,
+              left: `${(i * 17) % 100}%`,
               bottom: 0,
-              animationDelay: `${Math.random() * 8}s`,
-              animationDuration: `${Math.random() * 8 + 10}s`,
+              animationDelay: `${(i * 3) % 8}s`,
+              animationDuration: `${10 + ((i * 4) % 8)}s`,
             }}
           />
         ))}

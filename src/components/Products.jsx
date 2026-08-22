@@ -1,7 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import API from '../utils/api';
 
 export const featuredProducts = [
   { _id: '1', name: 'AUTO GUN + JET Automatic Water Pump Controller', category: 'Single Phase', shortDescription: 'Automatic water pump controller with motor ON/OFF control, dry run protection and tank overflow prevention for everyday water management.', features: ['Auto ON/OFF', 'Dry Run Protection', 'Overflow Prevention'] },
@@ -123,23 +122,7 @@ const ProductCard = ({ product, index }) => {
 export default function Products() {
   const [products, setProducts] = useState(defaultProducts);
   const [activeCategory, setActiveCategory] = useState('All');
-  const [loading, setLoading] = useState(false);
   const { ref, inView } = useInView({ threshold: 0.05, triggerOnce: true });
-
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        setLoading(true);
-        const res = await API.get('/products?limit=20');
-        if (res.data.data?.length > 0) setProducts(res.data.data);
-      } catch {
-        // Use defaults
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchProducts();
-  }, []);
 
   const filtered = activeCategory === 'All'
     ? products
@@ -189,26 +172,11 @@ export default function Products() {
         </motion.div>
 
         {/* Product grid */}
-        {loading ? (
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
-            {[...Array(10)].map((_, i) => (
-              <div key={i} className="product-card animate-pulse">
-                <div className="h-44 bg-gray-200 rounded-t-xl" />
-                <div className="p-5 space-y-3">
-                  <div className="h-4 bg-gray-200 rounded" />
-                  <div className="h-3 bg-gray-100 rounded w-3/4" />
-                  <div className="h-8 bg-gray-200 rounded-xl" />
-                </div>
-              </div>
-            ))}
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
-            {filtered.map((product, i) => (
-              <ProductCard key={product._id} product={product} index={i} />
-            ))}
-          </div>
-        )}
+        <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
+          {filtered.map((product, i) => (
+            <ProductCard key={product._id} product={product} index={i} />
+          ))}
+        </div>
 
         {/* CTA */}
         <motion.div

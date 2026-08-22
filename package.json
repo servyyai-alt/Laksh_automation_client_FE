@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "chmod -R +x node_modules/.bin node_modules/esbuild node_modules/@esbuild 2>/dev/null || true; vite build",
+    "build": "chmod -R +x node_modules/.bin node_modules/esbuild node_modules/@esbuild 2>/dev/null || true; vite build && node scripts/prerender-home.mjs",
+    "prerender:home": "node scripts/prerender-home.mjs",
     "preview": "vite preview",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0"
   },

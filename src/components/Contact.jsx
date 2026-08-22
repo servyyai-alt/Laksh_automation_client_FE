@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
 import { useInView } from 'react-intersection-observer';
 import toast from 'react-hot-toast';
-import API from '../utils/api';
 import { contactDetails } from '../utils/site';
 
 const serviceOptions = [
@@ -27,13 +26,27 @@ export default function Contact() {
   const onSubmit = async (data) => {
     try {
       setSubmitting(true);
-      await API.post('/enquiries', data);
+
+      const message = [
+        'Hello Laksh Automations, I need information about your products.',
+        '',
+        `Name: ${data.name}`,
+        `Mobile: ${data.mobile}`,
+        `City: ${data.city}`,
+        `Product Required: ${data.productRequired}`,
+        data.message ? `Message: ${data.message}` : null
+      ]
+        .filter(Boolean)
+        .join('\n');
+
+      const whatsappUrl = `https://wa.me/${contactDetails.phone.replace('+', '')}?text=${encodeURIComponent(message)}`;
+      window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+
       setSubmitted(true);
       reset();
-      toast.success('Enquiry submitted! We will call you shortly.');
-    } catch (err) {
-      const msg = err.response?.data?.errors?.[0]?.msg || err.response?.data?.message || 'Something went wrong. Please try again.';
-      toast.error(msg);
+      toast.success('Opening WhatsApp with your enquiry.');
+    } catch {
+      toast.error('Unable to open WhatsApp right now. Please try again.');
     } finally {
       setSubmitting(false);
     }

@@ -55,12 +55,12 @@ export default function Hero() {
             key={i}
             className="bubble"
             style={{
-              width: `${Math.random() * 30 + 10}px`,
-              height: `${Math.random() * 30 + 10}px`,
-              left: `${Math.random() * 100}%`,
-              bottom: `-${Math.random() * 50}px`,
-              animationDelay: `${Math.random() * 8}s`,
-              animationDuration: `${Math.random() * 6 + 8}s`
+              width: `${10 + ((i * 7) % 30)}px`,
+              height: `${10 + ((i * 11) % 30)}px`,
+              left: `${(i * 13) % 100}%`,
+              bottom: `-${(i * 5) % 50}px`,
+              animationDelay: `${(i * 2) % 8}s`,
+              animationDuration: `${8 + ((i * 3) % 6)}s`
             }}
           />
         ))}
