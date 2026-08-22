@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
-import { RefreshCw } from "lucide-react";
+import RefreshCw from "lucide-react/dist/esm/icons/refresh-cw.mjs";
 import logo from "../../assets/logo.png";
 import SubscriptionExpired from "./SubscriptionExpried";
 import { getSubscriptionStatus } from "../../utils/subscriptionApi";
