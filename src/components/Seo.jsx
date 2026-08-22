@@ -32,6 +32,7 @@ export default function Seo({
   const url = canonical ? canonicalUrl(canonical) : canonicalUrl(location.pathname);
   const schemaList = Array.isArray(jsonLd) ? jsonLd : [jsonLd];
   const robots = noindex ? 'noindex, nofollow, noarchive' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
+  const googlebot = noindex ? 'noindex, nofollow, noarchive' : 'index, follow';
   const favicon = absoluteUrl('/favicon.svg');
   const manifest = absoluteUrl('/manifest.webmanifest');
 
@@ -43,6 +44,7 @@ export default function Seo({
       <meta name="description" content={pageDesc} />
       <meta name="keywords" content={keywords} />
       <meta name="robots" content={robots} />
+      <meta name="googlebot" content={googlebot} />
       <meta name="author" content={siteName} />
       <meta name="application-name" content={siteName} />
       <meta name="apple-mobile-web-app-title" content={siteName} />

@@ -1,87 +1,91 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
-const faqs = [
+export const homepageFaqs = [
   {
     question: 'What is an automatic water level controller?',
     answer:
-      'An automatic water level controller is a device that monitors the water level in tanks and automatically switches the pump on or off to maintain the desired level. It prevents overflow and dry running of the motor.'
+      'An automatic water level controller monitors tank levels and switches the pump on or off automatically so water stays within the desired range.'
   },
   {
-    question: 'How does a wireless water level controller work?',
+    question: 'How does an automatic water level controller work?',
     answer:
-      'A wireless water level controller uses radio frequency or IoT technology to communicate between the sensor unit in the tank and the motor controller unit, eliminating the need for wiring between floors.'
+      'Sensors or probes detect the water level in the tank or sump. When the level drops, the controller starts the pump, and when the tank fills up, it stops the pump.'
   },
   {
-    question: 'Can I control my water pump from my phone?',
+    question: 'Can the controller automatically switch the water pump ON and OFF?',
     answer:
-      'Yes. Our GSM and IoT smart controllers allow you to monitor and control your water pump remotely using your mobile phone through SMS or a mobile app.'
+      'Yes. That is the main job of the controller. It automates pump switching so you do not need to monitor the tank manually.'
   },
   {
-    question: 'Do you provide borewell dry run protection?',
+    question: 'Does a water level controller prevent tank overflow?',
     answer:
-      'Yes. Our borewell protection systems detect when the water level drops below a safe threshold and automatically shut off the pump to prevent motor damage from dry running.'
+      'Yes. By stopping the pump when the tank reaches the full level, it helps prevent overflow and unnecessary water wastage.'
   },
   {
-    question: 'Which types of pumps are compatible with your controllers?',
+    question: 'Can it work with both sump and overhead tanks?',
     answer:
-      'We offer controllers for single phase and three phase pumps, submersible motors, monoblock pumps, and agricultural borewell pumps. Our range covers residential, commercial, and industrial applications.'
+      'Yes. Our water automation systems can be used for sump monitoring, overhead tank control, or both depending on the model and installation setup.'
   },
   {
-    question: 'Do you ship across India?',
+    question: 'Do you provide wireless water level controllers?',
     answer:
-      'Yes. We ship our products across India from our manufacturing facility in Coimbatore, Tamil Nadu. We also serve international markets on request.'
+      'Yes. Laksh Automations offers wireless water level controllers for situations where running wires between tanks and pumps is difficult or inconvenient.'
+  },
+  {
+    question: 'Can these controllers be used in apartments and industries?',
+    answer:
+      'Yes. Our controllers are suitable for homes, apartments, commercial buildings, farms and industrial water management applications.'
+  },
+  {
+    question: 'Do your controllers provide dry run protection?',
+    answer:
+      'Some of our models include dry run protection and pump protection features. The exact protection depends on the product model you choose.'
+  },
+  {
+    question: 'Where is Laksh Automations located?',
+    answer:
+      'Laksh Automations is based in Coimbatore, Tamil Nadu, India, and serves customers looking for water automation solutions in Coimbatore and beyond.'
+  },
+  {
+    question: 'How can I get the price or quotation for a water level controller?',
+    answer:
+      'You can contact us through the enquiry form, call us directly or send a WhatsApp message. We will recommend the right model and share pricing details.'
   }
 ];
 
-const sections = [
+const howItWorksPoints = [
   {
-    title: 'Automatic Water Level Controllers for Every Application',
-    body: [
-      'Laksh Automations is a leading manufacturer of automatic water level controllers based in Coimbatore, Tamil Nadu. Our products are designed to provide smart control and reliable water management for homes, apartments, industries, schools, hospitals, hotels, and agricultural farms.',
-      'Our automatic water level controllers monitor the water level in your overhead and underground tanks using sensor probes. When the water level drops below the set point, the controller automatically starts the pump. When the tank is full, it switches off the pump to prevent overflow. This eliminates the need for manual monitoring and prevents water wastage.',
-      'We offer a wide range of models including single phase controllers for homes, three phase controllers for heavy-duty applications, wireless controllers for multi-floor buildings, and GSM-enabled controllers for remote locations. Each product is manufactured with high-quality components and tested for durability and performance.'
-    ]
+    title: 'Sense the water level',
+    text:
+      'Sensors in the sump or overhead tank detect when the water level drops below or rises above the desired point.'
   },
   {
-    title: 'Wireless Water Level Controllers for Modern Buildings',
-    body: [
-      'Our wireless water level controllers are ideal for apartments, multi-story buildings, and commercial complexes where running wires between floors is impractical. The wireless technology eliminates the need for drilling holes and running cables through walls.',
-      'The wireless system consists of a sensor unit installed in the water tank and a motor controller unit near the pump. They communicate using a strong radio signal that works across multiple floors and walls. Installation takes just 15-20 minutes and requires no special tools.',
-      'Wireless water level controllers from Laksh Automations provide the same reliability as wired systems with the added convenience of easy installation. They are perfect for both new construction and retrofitting existing buildings where water management needs improvement.'
-    ]
+    title: 'Trigger automatic control',
+    text:
+      'The controller starts or stops the pump automatically, reducing manual supervision and unnecessary motor operation.'
   },
   {
-    title: 'Borewell Protection and Motor Safety Systems',
-    body: [
-      'Protecting your borewell pump from dry running is essential to avoid costly motor repairs. Our borewell dry run protection systems continuously monitor the water flow and pressure, automatically shutting off the motor if water supply drops below safe levels.',
-      'In addition to dry run protection, our controllers offer overload protection, phase failure protection for three-phase motors, and surge protection. These safety features extend the life of your pump motor and reduce maintenance costs significantly.',
-      'Agricultural farms and industrial facilities that rely on borewell pumps benefit greatly from our protection systems. The automatic shutdown prevents motor burnout and the need for expensive rewinding or replacement, saving thousands of rupees in repair costs.'
-    ]
-  },
-  {
-    title: 'GSM and IoT Smart Water Management Solutions',
-    body: [
-      'For applications where remote monitoring is essential, our GSM mobile pump controllers allow you to start, stop, and monitor your water pump from anywhere using your mobile phone. Simply send an SMS command or use our mobile app to control the pump.',
-      'Our IoT smart water controllers provide real-time water level data, pump status, and usage analytics through a cloud-based dashboard. You can set alerts, schedules, and automation rules to optimize your water management system.',
-      'These smart solutions are particularly valuable for farm owners, factory managers, and property owners who need to manage water systems across multiple locations. The combination of automation and remote access ensures your water supply is always reliable and efficient.'
-    ]
-  },
-  {
-    title: 'Why Choose Laksh Automations for Water Management',
-    body: [
-      'With over 15 years of experience in water automation, Laksh Automations has earned the trust of more than 10,000 customers across Tamil Nadu and India. Our products are proudly Made in India, manufactured at our facility in Coimbatore with strict quality control standards.',
-      'We offer the complete range of water management solutions from basic single phase controllers to advanced IoT-enabled systems. Every product comes with a warranty and our dedicated technical support team is always available to help with installation and troubleshooting.',
-      'Customer satisfaction is our top priority. We continuously improve our products based on customer feedback and invest in new technology to stay ahead in water automation. Our affordable pricing ensures that smart water management is accessible to everyone, from individual homes to large industrial facilities.'
-    ]
+    title: 'Protect the pump',
+    text:
+      'Where supported, protection features help reduce dry run damage and other common pump-related issues.'
   }
+];
+
+const benefitPoints = [
+  'Automatic motor ON/OFF control',
+  'Overhead tank and sump monitoring',
+  'Tank overflow prevention',
+  'Dry run protection where supported',
+  'Reduced manual intervention',
+  'Better water and electricity efficiency'
 ];
 
 export default function HomeSeoContent() {
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
 
   return (
-    <section id="seo-content" className="section-py bg-white" ref={ref} aria-labelledby="seo-content-heading">
+    <section id="how-it-works" className="section-py bg-white" ref={ref} aria-labelledby="how-it-works-heading">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -89,52 +93,51 @@ export default function HomeSeoContent() {
           transition={{ duration: 0.5 }}
           className="mb-10"
         >
-          <div className="badge-water mb-4 w-fit">SEO Overview</div>
-          <h2 id="seo-content-heading" className="section-heading mb-4">
-            Automatic Water Level Controllers, Pump Controllers & Water Automation Solutions
+          <div className="badge-water mb-4 w-fit">Smart Water Automation</div>
+          <h2 id="how-it-works-heading" className="section-heading mb-4">
+            How Automatic Water Level Control Works
           </h2>
           <p className="section-subheading max-w-4xl">
-            Laksh Automations is a leading manufacturer of automatic water level controllers, wireless water level controllers, borewell protection systems, and smart water management solutions in Coimbatore, Tamil Nadu, India.
+            Laksh Automations helps homes, apartments, industries, schools, hospitals, hotels and farms manage water more efficiently with automatic water level controllers, pump controllers and water automation systems built for Coimbatore, Tamil Nadu and beyond.
           </p>
         </motion.div>
 
-        <div className="space-y-10 text-gray-700 leading-8">
-          {sections.map((section, index) => (
-            <article key={section.title} className="rounded-3xl border border-primary-100 bg-[#F4FBFF] p-6 sm:p-8 shadow-water">
-              <h3 className="font-display text-2xl font-bold text-dark-navy mb-4">
-                {index + 1}. {section.title}
-              </h3>
-              <div className="space-y-4 text-[15px] sm:text-base">
-                {section.body.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
-                ))}
+        <div className="grid lg:grid-cols-3 gap-5 mb-10">
+          {howItWorksPoints.map((point, index) => (
+            <article key={point.title} className="rounded-3xl border border-primary-100 bg-[#F4FBFF] p-6 shadow-water">
+              <div className="badge-water mb-4" style={{ transform: 'scale(0.95)', transformOrigin: 'left center' }}>
+                Step {index + 1}
               </div>
+              <h3 className="font-display text-xl font-bold text-dark-navy mb-3">{point.title}</h3>
+              <p className="text-gray-600 leading-7">{point.text}</p>
             </article>
           ))}
         </div>
 
-        <div className="mt-10 rounded-3xl bg-dark-navy p-8 sm:p-10 text-white shadow-water">
+        <div className="rounded-3xl bg-dark-navy p-8 sm:p-10 text-white shadow-water mb-10">
           <div className="badge-water mb-4 w-fit" style={{ background: 'rgba(72, 202, 228, 0.15)', color: '#48CAE4', borderColor: 'rgba(72, 202, 228, 0.3)' }}>
-            Call To Action
+            Benefits
           </div>
-          <h3 className="font-display text-2xl sm:text-3xl font-bold mb-4">
-            Ready to automate your water management?
-          </h3>
-          <p className="text-white/80 max-w-3xl mb-6">
-            Talk to Laksh Automations about automatic water level controllers, wireless controllers, borewell protection, GSM pump controllers, or custom water automation solutions for your home, business, or farm.
-          </p>
-          <a href="#contact" className="btn-aqua">
-            Get Free Consultation
-          </a>
+          <h2 className="font-display text-2xl sm:text-3xl font-bold mb-4">
+            Benefits of Automatic Water Level Controllers
+          </h2>
+          <div className="grid sm:grid-cols-2 gap-3 text-white/85">
+            {benefitPoints.map((benefit) => (
+              <div key={benefit} className="flex items-start gap-3 rounded-2xl bg-white/5 border border-white/10 p-4">
+                <span className="text-secondary-400 mt-1">✓</span>
+                <span className="text-sm leading-6">{benefit}</span>
+              </div>
+            ))}
+          </div>
         </div>
 
-        <div className="mt-10" aria-labelledby="seo-faq-heading">
+        <section id="faq" aria-labelledby="faq-heading">
           <div className="badge-water mb-4 w-fit">FAQ</div>
-          <h3 id="seo-faq-heading" className="font-display text-2xl font-bold text-dark-navy mb-6">
+          <h2 id="faq-heading" className="section-heading mb-6">
             Frequently Asked Questions
-          </h3>
+          </h2>
           <div className="grid gap-4">
-            {faqs.map((faq) => (
+            {homepageFaqs.map((faq) => (
               <details key={faq.question} className="group rounded-2xl border border-primary-100 bg-white p-5 shadow-sm">
                 <summary className="cursor-pointer list-none font-semibold text-dark-navy flex items-center justify-between gap-4">
                   <span>{faq.question}</span>
@@ -144,6 +147,19 @@ export default function HomeSeoContent() {
               </details>
             ))}
           </div>
+        </section>
+
+        <div className="mt-10 rounded-3xl bg-[#F4FBFF] p-8 sm:p-10 border border-primary-100">
+          <div className="badge-water mb-4 w-fit">Call To Action</div>
+          <h2 className="font-display text-2xl sm:text-3xl font-bold text-dark-navy mb-4">
+            Ready to automate your water management?
+          </h2>
+          <p className="text-gray-600 max-w-3xl mb-6 leading-7">
+            Talk to Laksh Automations about automatic water level controllers, wireless controllers, borewell protection, GSM pump controllers or custom water automation solutions for your home, business or farm.
+          </p>
+          <a href="#contact" className="btn-aqua">
+            Get Free Consultation
+          </a>
         </div>
       </div>
     </section>

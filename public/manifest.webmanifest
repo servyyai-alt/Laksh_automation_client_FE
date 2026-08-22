@@ -1,9 +1,9 @@
 {
   "name": "Laksh Automations",
   "short_name": "Laksh",
-  "description": "Leading manufacturer of automatic water level controllers and water automation solutions in Coimbatore, Tamil Nadu.",
-  "start_url": "https://lakshautomations.in/",
-  "scope": "https://lakshautomations.in/",
+  "description": "Laksh Automations is a leading manufacturer of automatic water level controllers, pump controllers and smart water automation solutions in Coimbatore, Tamil Nadu.",
+  "start_url": "https://www.lakshautomations.in/",
+  "scope": "https://www.lakshautomations.in/",
   "display": "standalone",
   "background_color": "#0A1628",
   "theme_color": "#0A1628",

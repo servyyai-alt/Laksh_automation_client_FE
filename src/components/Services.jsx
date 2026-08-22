@@ -18,7 +18,7 @@ export default function Services() {
   const { ref, inView } = useInView({ threshold: 0.08, triggerOnce: true });
 
   return (
-    <section id="services" className="section-py bg-white" ref={ref}>
+    <section id="water-pump-controller" className="section-py bg-white" ref={ref} aria-labelledby="services-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-12"
@@ -26,9 +26,9 @@ export default function Services() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <div className="badge-water mb-4 mx-auto w-fit">Products</div>
-          <h2 className="section-heading mb-4">
-            Complete Range of <span style={{ color: '#0077FF' }}>Water Automation Solutions</span>
+          <div className="badge-water mb-4 mx-auto w-fit">Controllers</div>
+          <h2 id="services-heading" className="section-heading mb-4">
+            Automatic Water Pump & Motor Controllers
           </h2>
           <p className="section-subheading mx-auto text-center">
             From single phase home controllers to industrial-grade automation systems, we have the right water management solution for every application.

@@ -4,51 +4,51 @@ import { useInView } from 'react-intersection-observer';
 const reasons = [
   {
     icon: '🏭',
-    title: 'High Quality Manufacturing',
-    desc: 'Every product is manufactured with precision using premium components and rigorous quality checks.',
-    highlight: 'Quality'
+    title: 'Reliable Automatic Control',
+    desc: 'Our controllers are designed to switch pumps on and off automatically based on water level needs.',
+    highlight: 'Control'
   },
   {
     icon: '✅',
-    title: 'Reliable Products',
-    desc: 'Our controllers are built to perform consistently in all conditions with minimal maintenance.',
-    highlight: 'Dependable'
+    title: 'Water Overflow Prevention',
+    desc: 'Automatic level monitoring helps reduce overflow in overhead tanks and sump systems.',
+    highlight: 'Overflow'
   },
   {
     icon: '🔬',
-    title: 'Advanced Technology',
-    desc: 'We use the latest microcontroller and wireless technology for smart water management.',
-    highlight: 'Innovative'
+    title: 'Pump & Motor Protection',
+    desc: 'Our range includes protection features that help reduce dry run risk and motor stress where supported.',
+    highlight: 'Safety'
   },
   {
     icon: '📞',
-    title: 'Expert Technical Support',
-    desc: 'Our dedicated support team is always ready to help with installation and troubleshooting.',
-    highlight: 'Support'
+    title: 'Water & Electricity Savings',
+    desc: 'By reducing unnecessary pump operation, automation can help save water and power over time.',
+    highlight: 'Savings'
   },
   {
     icon: '⚡',
-    title: 'Fast Service',
-    desc: 'Quick delivery and responsive after-sales service to keep your water system running.',
-    highlight: 'Quick'
+    title: 'Easy Installation',
+    desc: 'Many of our controllers are designed for straightforward setup with practical installation guidance.',
+    highlight: 'Setup'
   },
   {
     icon: '😊',
-    title: 'Customer Satisfaction',
-    desc: 'Over 10,000 happy customers trust our products for their water management needs.',
-    highlight: 'Trusted'
+    title: 'Low Maintenance',
+    desc: 'Reliable components and sensible control logic help keep maintenance requirements low.',
+    highlight: 'Simple'
   },
   {
     icon: '🇮🇳',
-    title: 'Made in India',
-    desc: 'Proudly designed and manufactured in Coimbatore, Tamil Nadu for Indian conditions.',
-    highlight: 'Indian'
+    title: 'Residential & Industrial Solutions',
+    desc: 'We support homes, apartments, farms and industries with products suited to different use cases.',
+    highlight: 'Flexible'
   },
   {
     icon: '💰',
-    title: 'Affordable Pricing',
-    desc: 'Premium quality water automation solutions at prices that fit every budget.',
-    highlight: 'Value'
+    title: 'Local Support from Coimbatore',
+    desc: 'Our team operates from Coimbatore and can help customers with product guidance and support.',
+    highlight: 'Local'
   }
 ];
 
@@ -56,7 +56,7 @@ export default function WhyChooseUs() {
   const { ref, inView } = useInView({ threshold: 0.05, triggerOnce: true });
 
   return (
-    <section id="why-us" className="section-py" style={{ background: '#F4FBFF' }} ref={ref}>
+    <section id="why-choose-us" className="section-py" style={{ background: '#F4FBFF' }} ref={ref} aria-labelledby="why-choose-us-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-12"
@@ -65,11 +65,11 @@ export default function WhyChooseUs() {
           transition={{ duration: 0.6 }}
         >
           <div className="badge-water mb-4 mx-auto w-fit">Why Choose Us</div>
-          <h2 className="section-heading mb-4">
+          <h2 id="why-choose-us-heading" className="section-heading mb-4">
             Why Choose <span style={{ color: '#0077FF' }}>Laksh Automations?</span>
           </h2>
           <p className="section-subheading mx-auto text-center">
-            Smart Control. Sure Protection.
+            Reliable automatic control, water overflow prevention and pump protection for homes, farms, commercial buildings and industrial facilities.
           </p>
         </motion.div>
 

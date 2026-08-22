@@ -11,6 +11,7 @@ export default function WhyUsPage() {
         title="Why Choose Us | Laksh Automations"
         description="Why choose Laksh Automations for water level control — quality manufacturing, 15+ years experience, in-house support, and proven reliability."
         canonical="/why-us"
+        noindex
       />
       <div className="min-h-screen overflow-hidden pt-16">
         <Navbar />

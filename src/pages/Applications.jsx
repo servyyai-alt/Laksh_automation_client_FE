@@ -11,6 +11,7 @@ export default function ApplicationsPage() {
         title="Water Automation Applications | Laksh Automations"
         description="Discover where Laksh Automations products are used — residential homes, apartments, industries, schools, hotels, hospitals, and farms."
         canonical="/applications"
+        noindex
       />
       <div className="min-h-screen overflow-hidden pt-16">
         <Navbar />

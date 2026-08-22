@@ -25,6 +25,7 @@ export default function ServicePage({ service }) {
         title={`${service.title} | Laksh Automations`}
         description={service.description}
         canonical={`/services/${service.slug}`}
+        noindex
         jsonLd={[
           organizationSchema(),
           websiteSchema(),

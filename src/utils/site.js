@@ -1,11 +1,12 @@
-const CANONICAL_SITE_URL = 'https://lakshautomations.in';
+const CANONICAL_SITE_URL = 'https://www.lakshautomations.in';
 
 const normalizeHost = (url) =>
   String(url || '')
     .trim()
-    .replace(/^http:\/\/www\.lakshautomations\.in/i, 'https://lakshautomations.in')
-    .replace(/^https:\/\/www\.lakshautomations\.in/i, 'https://lakshautomations.in')
-    .replace(/^http:\/\/lakshautomations\.in/i, 'https://lakshautomations.in')
+    .replace(/^http:\/\/www\.lakshautomations\.in/i, 'https://www.lakshautomations.in')
+    .replace(/^https:\/\/lakshautomations\.in/i, 'https://www.lakshautomations.in')
+    .replace(/^https:\/\/www\.lakshautomations\.in/i, 'https://www.lakshautomations.in')
+    .replace(/^http:\/\/lakshautomations\.in/i, 'https://www.lakshautomations.in')
     .replace(/\/+$/, '');
 
 const configuredSiteUrl = normalizeHost(import.meta.env.VITE_SITE_URL || CANONICAL_SITE_URL);
@@ -17,7 +18,7 @@ export const siteName = 'Laksh Automations';
 export const defaultTitle = 'Laksh Automations | Automatic Water Level Controller Manufacturer Coimbatore';
 
 export const defaultDescription =
-  'Leading manufacturer of automatic water level controllers, wireless water level controllers, borewell protection systems, and water automation solutions in Coimbatore, Tamil Nadu.';
+  'Laksh Automations is a leading manufacturer of automatic water level controllers, pump controllers, motor protection systems and smart water automation solutions in Coimbatore, Tamil Nadu.';
 
 export const defaultKeywords = [
   'Automatic Water Level Controller',
@@ -63,7 +64,7 @@ export function absoluteUrl(path = '') {
 
 export function canonicalUrl(path = '/') {
   const cleanPath = path === '/' ? '/' : `/${path.replace(/^\/+/, '')}`;
-  return absoluteUrl(cleanPath);
+  return cleanPath === '/' ? `${siteUrl}/` : absoluteUrl(cleanPath);
 }
 
 export function normalizeCanonicalUrl(url = '') {

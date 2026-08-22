@@ -40,7 +40,7 @@ export default function Terms() {
                 <li><strong>"Company"</strong>, <strong>"We"</strong>, <strong>"Us"</strong>, <strong>"Our"</strong> refers to Laksh Automations, Coimbatore, Tamil Nadu.</li>
                 <li><strong>"Customer"</strong>, <strong>"You"</strong>, <strong>"Your"</strong> refers to the user or purchaser of our products or services.</li>
                 <li><strong>"Products"</strong> refers to all automatic water level controllers, pump controllers, and related equipment manufactured or supplied by Laksh Automations.</li>
-                <li><strong>"Website"</strong> refers to lakshautomations.in.</li>
+                <li><strong>"Website"</strong> refers to www.lakshautomations.in.</li>
               </ul>
             </section>
 

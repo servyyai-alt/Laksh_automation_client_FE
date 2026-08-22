@@ -1,31 +1,37 @@
 import { Link } from 'react-router-dom';
-import { motion } from "framer-motion";
 import logo from '../assets/logo.png';
+import { contactDetails } from '../utils/site';
 
 const products = [
-  { label: 'Single Phase Controllers', href: '/products' },
-  { label: 'Three Phase Controllers', href: '/products' },
-  { label: 'Wireless Controllers', href: '/products' },
-  { label: 'Borewell Protection', href: '/products' },
-  { label: 'GSM Pump Controller', href: '/products' },
-  { label: 'IoT Smart Controllers', href: '/products' },
-  { label: 'Apartment Automation', href: '/products' },
-  { label: 'Industrial Automation', href: '/products' }
+  { label: 'Automatic Water Level Controllers', href: '#products' },
+  { label: 'Automatic Pump Controllers', href: '#products' },
+  { label: 'Wireless Water Level Controllers', href: '#products' },
+  { label: 'Motor Protection Controllers', href: '#products' }
 ];
 
 const quickLinks = [
-  { label: "Home", href: "/" },
-  { label: "About Us", href: "/about" },
-  { label: "Products", href: "/products" },
-  { label: "Services", href: "/services" },
-  { label: "Use Cases", href: "/applications" },
-  { label: "Why Choose Us", href: "/why-us" },
-  { label: "Results", href: "/results" },
-  { label: "Contact", href: "/contact" },
+  { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
+  { label: "Products", href: "#products" },
+  { label: "Applications", href: "#applications" },
+  { label: "FAQ", href: "#faq" },
+  { label: "Contact", href: "#contact" }
 ];
 
 const handleNav = (e, href) => {
   e.preventDefault();
+  if (href === '#home') {
+    if (window.location.pathname === '/') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      window.location.href = '/#home';
+    }
+    return;
+  }
+  if (window.location.pathname !== '/') {
+    window.location.href = `/${href}`;
+    return;
+  }
   document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
 };
 
@@ -99,11 +105,15 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-white/60 text-sm leading-relaxed mb-5">
-              Leading Manufacturer of Automatic Water Level Controllers and Water Automation Solutions.
+              Laksh Automations
+              <br />
+              Automatic Water Level Controllers & Water Automation Solutions
+              <br />
+              Coimbatore, Tamil Nadu
             </p>
             <div className="space-y-2">
               <a
-                href="tel:+918807500321"
+                href={`tel:${contactDetails.phone}`}
                 className="flex items-center gap-2 text-secondary-400 text-sm hover:text-white transition-colors duration-200"
               >
                 <svg
@@ -120,7 +130,7 @@ export default function Footer() {
                     d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                   />
                 </svg>
-                +91 88075 00321
+                {contactDetails.phoneDisplay}
               </a>
 
               <a
@@ -164,7 +174,7 @@ export default function Footer() {
                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                   />
                 </svg>
-                Coimbatore, Tamil Nadu – 641030
+                {contactDetails.address.streetAddress}, {contactDetails.address.addressLocality}, {contactDetails.address.addressRegion} {contactDetails.address.postalCode}
               </div>
             </div>
           </div>
@@ -177,24 +187,16 @@ export default function Footer() {
             <ul className="space-y-2.5">
               {quickLinks.map((link) => (
                 <li key={link.label}>
-                  <Link
-                    to={link.href}
+                  <a
+                    href={link.href}
+                    onClick={(e) => handleNav(e, link.href)}
                     className="text-white/60 text-sm hover:text-secondary-400 transition-colors duration-200 flex items-center gap-2"
                   >
                     <span className="text-primary-500 text-xs">›</span>
                     {link.label}
-                  </Link>
+                  </a>
                 </li>
               ))}
-              <li>
-                <Link
-                  to="/admin/login"
-                  className="text-white/60 text-sm hover:text-secondary-400 transition-colors duration-200 flex items-center gap-2"
-                >
-                  <span className="text-primary-500 text-xs">›</span>
-                  Admin Panel
-                </Link>
-              </li>
             </ul>
           </div>
 
@@ -206,15 +208,16 @@ export default function Footer() {
             <ul className="space-y-2.5">
               {products.map((p) => (
                 <li key={p.label}>
-                  <Link
-                    to={p.href}
+                  <a
+                    href={p.href}
+                    onClick={(e) => handleNav(e, p.href)}
                     className="text-white/60 text-sm hover:text-secondary-400 transition-colors duration-200 flex items-start gap-2"
                   >
                     <span className="text-secondary-500 text-xs mt-0.5 flex-shrink-0">
                       ›
                     </span>
                     {p.label}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -262,10 +265,6 @@ export default function Footer() {
               </a>
             </div>
           </div>
-        </div>
-
-        <div className="sr-only" aria-hidden="true">
-          Automatic Water Level Controller, Water Pump Controller Manufacturer Coimbatore, Wireless Water Level Controller, Tank Overflow Prevention System, Borewell Protection System, Motor Protection Controller, Industrial Water Automation, Agricultural Pump Controller, Smart Water Management System, Digital Water Level Indicator, Three Phase Pump Controller, Single Phase Pump Controller
         </div>
 
         {/* Bottom bar */}

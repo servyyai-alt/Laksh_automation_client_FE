@@ -2,21 +2,21 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 const apps = [
-  { icon: '🏠', title: 'Residential Buildings', desc: 'Automatic water level control for independent homes and residential complexes.', color: '#0077FF' },
-  { icon: '🏢', title: 'Apartments', desc: 'Multi-floor water management solutions for apartment communities.', color: '#00B4D8' },
-  { icon: '🏭', title: 'Industries', desc: 'Heavy-duty water automation for industrial plants and manufacturing units.', color: '#48CAE4' },
-  { icon: '🏫', title: 'Schools & Colleges', desc: 'Reliable water level management for educational institutions.', color: '#0096C7' },
-  { icon: '🏨', title: 'Hotels', desc: 'Continuous water supply automation for hospitality businesses.', color: '#0077FF' },
-  { icon: '🏥', title: 'Hospitals', desc: 'Uninterrupted water management for critical healthcare facilities.', color: '#00B4D8' },
-  { icon: '🚜', title: 'Agriculture & Farms', desc: 'Smart irrigation and borewell protection for agricultural operations.', color: '#48CAE4' },
-  { icon: '🏢', title: 'Commercial Complexes', desc: 'Centralized water automation for offices and commercial buildings.', color: '#0096C7' }
+  { icon: '🏠', title: 'Residential Homes', desc: 'Automatic water level controllers help homeowners manage sump and overhead tank levels while reducing overflow and unnecessary motor use.', color: '#0077FF' },
+  { icon: '🏢', title: 'Apartments', desc: 'Water automation systems simplify distribution across multiple tanks and pumps, making apartment water management more reliable.', color: '#00B4D8' },
+  { icon: '🏭', title: 'Industries', desc: 'Industrial water automation keeps utility tanks and process water under control while protecting pumps from dry running and overload.', color: '#48CAE4' },
+  { icon: '🏫', title: 'Schools & Colleges', desc: 'Educational institutions can reduce manual supervision and keep campus water supply available for daily operations.', color: '#0096C7' },
+  { icon: '🏨', title: 'Hotels', desc: 'Hotels benefit from consistent water availability for guest rooms, kitchens and service areas with less manual pump switching.', color: '#0077FF' },
+  { icon: '🏥', title: 'Hospitals', desc: 'Hospitals need dependable water supply, and automation helps maintain safe tank levels with fewer interruptions.', color: '#00B4D8' },
+  { icon: '🚜', title: 'Agriculture & Farms', desc: 'Borewell protection and pump automation support irrigation needs while helping prevent dry run damage in farm applications.', color: '#48CAE4' },
+  { icon: '🏢', title: 'Commercial Complexes', desc: 'Offices and commercial buildings can centralize pump control and reduce the effort required to monitor water storage.', color: '#0096C7' }
 ];
 
 export default function Applications() {
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
 
   return (
-    <section id="use-cases" className="section-py bg-white" ref={ref}>
+    <section id="applications" className="section-py bg-white" ref={ref} aria-labelledby="applications-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-12"
@@ -25,8 +25,8 @@ export default function Applications() {
           transition={{ duration: 0.6 }}
         >
           <div className="badge-water mb-4 mx-auto w-fit">Applications</div>
-          <h2 className="section-heading mb-4">
-            Where Our <span style={{ color: '#0077FF' }}>Products</span> Are Used
+          <h2 id="applications-heading" className="section-heading mb-4">
+            Applications of Our Water Automation Systems
           </h2>
           <p className="section-subheading mx-auto text-center">
             Our automatic water level controllers are trusted across residential, commercial, industrial, and agricultural applications.

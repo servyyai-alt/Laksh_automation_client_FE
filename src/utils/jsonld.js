@@ -9,7 +9,7 @@ export function organizationSchema() {
     url: siteUrl,
     logo: absoluteUrl('/favicon.svg'),
     description:
-      'Leading manufacturer of automatic water level controllers, wireless water level controllers, borewell protection systems, and water automation solutions in Coimbatore, Tamil Nadu.',
+      'Laksh Automations is a Coimbatore-based manufacturer of automatic water level controllers, pump controllers, motor protection systems, and water automation solutions.',
     contactPoint: [
       {
         '@type': 'ContactPoint',
@@ -23,7 +23,7 @@ export function organizationSchema() {
       '@type': 'PostalAddress',
       ...contactDetails.address
     },
-    sameAs: ['https://www.linkedin.com', 'https://www.instagram.com'],
+    sameAs: ['https://www.facebook.com/saravanan.lakshmanan.148946?rdid=VzzHUfnjuch9W8Hy&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F18x7mAD3qT%2F#'],
     areaServed: 'IN'
   };
 }
@@ -59,6 +59,37 @@ export function localBusinessSchema() {
       }
     ]
   };
+}
+
+export function productSchema({
+  name,
+  description,
+  path = '/',
+  image = '/og-image.jpg',
+  brand = siteName,
+  category = 'Water Automation Product',
+  sku
+}) {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    '@id': `${canonicalUrl(path)}#product`,
+    name,
+    description,
+    image: absoluteUrl(image),
+    brand: {
+      '@type': 'Brand',
+      name: brand
+    },
+    category,
+    url: canonicalUrl(path)
+  };
+
+  if (sku) {
+    schema.sku = sku;
+  }
+
+  return schema;
 }
 
 export function websiteSchema() {

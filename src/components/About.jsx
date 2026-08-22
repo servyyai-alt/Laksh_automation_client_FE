@@ -13,7 +13,7 @@ export default function About() {
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
 
   return (
-    <section id="about" className="section-py bg-white" ref={ref}>
+    <section id="about" className="section-py bg-white" ref={ref} aria-labelledby="about-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-14 items-center">
           {/* Left — Visual */}
@@ -77,15 +77,14 @@ export default function About() {
             transition={{ duration: 0.7, delay: 0.2 }}
           >
             <div className="badge-water mb-5">About Us</div>
-            <h2 className="section-heading mb-5">
-              Leading Manufacturer of{' '}
-              <span style={{ color: '#0077FF' }}>Water Level Controllers</span>
+            <h2 id="about-heading" className="section-heading mb-5">
+              Automatic Water Level Controller Manufacturer in Coimbatore
             </h2>
             <p className="section-subheading mb-6">
-              Founded in Coimbatore, Tamil Nadu, Laksh Automations is a leading manufacturer of automatic water level controllers and water automation solutions. We help homes, apartments, industries, and farms manage water efficiently with our reliable and affordable products.
+              Laksh Automations is a Coimbatore-based manufacturer and supplier of automatic water level controllers, automatic pump controllers, motor protection solutions and smart water automation systems designed for residential, commercial, agricultural and industrial applications.
             </p>
             <p className="section-subheading mb-8">
-              Every product is designed and manufactured in India with advanced technology to deliver smart control and sure protection for your water management needs.
+              Our products are designed to help manage sump and overhead tank water levels, prevent overflow, reduce dry running and improve the efficiency of water and power usage without changing the way your existing system works.
             </p>
 
             <div className="grid grid-cols-2 gap-5">

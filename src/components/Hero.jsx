@@ -99,14 +99,14 @@ export default function Hero() {
               </div>
 
               <h1 className="font-display text-white leading-tight mb-4" style={{ fontSize: 'clamp(32px, 5vw, 58px)', fontWeight: 800 }}>
-                <span style={{ background: 'linear-gradient(135deg, #48CAE4, #00B4D8)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-                  Automatic Water Level
-                </span>{' '}
-                Controllers & Water Automation
+                Automatic Water Level Controllers & Water Automation Solutions
               </h1>
 
-              <p className="text-blue-100/80 text-lg leading-relaxed mb-8" style={{ maxWidth: '520px' }}>
-                Smart Control. Sure Protection. Leading manufacturer of automatic water level controllers, pump controllers, and water automation solutions from Coimbatore.
+              <p className="text-blue-100 text-xl font-semibold leading-relaxed mb-2" style={{ maxWidth: '520px' }}>
+                Smart Control. Sure Protection.
+              </p>
+              <p className="text-blue-100/80 text-lg leading-relaxed mb-8" style={{ maxWidth: '580px' }}>
+                Laksh Automations is a leading manufacturer of automatic water level controllers, automatic pump controllers and smart water automation systems in Coimbatore, Tamil Nadu. Our solutions help prevent water overflow, dry running and unnecessary motor operation while improving water and energy efficiency.
               </p>
 
               {/* Highlights */}

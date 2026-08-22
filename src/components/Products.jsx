@@ -3,28 +3,30 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import API from '../utils/api';
 
-const defaultProducts = [
-  { _id: '1', name: 'AUTO GUN + JET Automatic Water Pump Controller', category: 'Single Phase', shortDescription: 'Automatic pump control for domestic water systems', features: ['Auto ON/OFF', 'Dry Run Protection', 'Overflow Prevention'] },
-  { _id: '2', name: 'L10SS Single Phase Automatic Water Level Controller', category: 'Single Phase', shortDescription: 'Smart single-phase motor automation with level sensing', features: ['Level Sensing', 'Motor Protection', 'LED Indicators'] },
-  { _id: '3', name: 'L30SS Three Phase Automatic Water Level Controller', category: 'Three Phase', shortDescription: 'Heavy-duty three-phase automation for industrial use', features: ['3-Phase Control', 'Phase Failure Protection', 'Timer Function'] },
-  { _id: '4', name: 'Wireless Water Level Controller', category: 'Wireless', shortDescription: 'No wire needed — 100% wireless tank monitoring', features: ['Wireless Sensors', 'RF Technology', 'Easy Setup'] },
+export const featuredProducts = [
+  { _id: '1', name: 'AUTO GUN + JET Automatic Water Pump Controller', category: 'Single Phase', shortDescription: 'Automatic water pump controller with motor ON/OFF control, dry run protection and tank overflow prevention for everyday water management.', features: ['Auto ON/OFF', 'Dry Run Protection', 'Overflow Prevention'] },
+  { _id: '2', name: 'L10SS Single Phase Automatic Water Level Controller', category: 'Single Phase', shortDescription: 'Single-phase automatic water level controller for overhead tank monitoring, sump monitoring and automatic tank filling.', features: ['Level Sensing', 'Motor Protection', 'LED Indicators'] },
+  { _id: '3', name: 'L30SS Three Phase Automatic Water Level Controller', category: 'Three Phase', shortDescription: 'Heavy-duty three-phase water level controller designed for pump automation, phase protection and industrial water management.', features: ['3-Phase Control', 'Phase Failure Protection', 'Timer Function'] },
+  { _id: '4', name: 'Wireless Water Level Controller', category: 'Wireless', shortDescription: 'Wireless tank monitoring system that reduces wiring needs while enabling automatic motor control for homes and commercial spaces.', features: ['Wireless Sensors', 'RF Technology', 'Easy Setup'] },
   { _id: '5', name: 'Wireless Transmitter – 500 Meter Range', category: 'Wireless', shortDescription: 'Long-range wireless signal transmitter for remote tanks', features: ['500m Range', 'Battery Powered', 'Weatherproof'] },
   { _id: '6', name: 'Wireless Receiver – 500 Meter Range', category: 'Wireless', shortDescription: 'Paired receiver unit for 500m wireless controller', features: ['500m Range', 'Signal Indicator', 'Auto Reconnect'] },
   { _id: '7', name: 'Wireless Transmitter – 1000 Meter Range', category: 'Wireless', shortDescription: 'Extended 1KM range transmitter for large properties', features: ['1000m Range', 'Strong Signal', 'Farm Suitable'] },
   { _id: '8', name: 'Wireless Receiver – 1000 Meter Range', category: 'Wireless', shortDescription: 'Extended range receiver unit for agricultural use', features: ['1000m Range', 'Weatherproof', 'Night Vision LED'] },
-  { _id: '9', name: 'Borewell Dry Run Protection System', category: 'Protection', shortDescription: 'Critical protection for borewell pump motors', features: ['Dry Run Sensing', 'Auto Cut-off', 'Motor Saver'] },
+  { _id: '9', name: 'Borewell Dry Run Protection System', category: 'Protection', shortDescription: 'Borewell protection system that cuts off the motor when water supply drops, helping prevent dry run damage and expensive repairs.', features: ['Dry Run Sensing', 'Auto Cut-off', 'Motor Saver'] },
   { _id: '10', name: 'Digital Water Level Indicator', category: 'Accessories', shortDescription: 'Clear digital display of tank water level percentage', features: ['Digital Display', '5 Level Display', 'Buzzer Alert'] },
-  { _id: '11', name: 'Single Phase Motor Protection Panel', category: 'Protection', shortDescription: 'Complete panel protection for single-phase motors', features: ['Overload Protection', 'Volt Guard', 'IP65 Panel'] },
-  { _id: '12', name: 'Three Phase Motor Protection Panel', category: 'Protection', shortDescription: 'Industrial grade three-phase protection panel', features: ['3-Phase Guard', 'Phase Reversal', 'Digital Meter'] },
-  { _id: '13', name: 'Underground Sump Automation Controller', category: 'Single Phase', shortDescription: 'Automated underground sump level management', features: ['Sump Level Control', 'Overflow Stop', 'Auto Fill'] },
-  { _id: '14', name: 'Apartment Water Automation System', category: 'Industrial', shortDescription: 'Central water management for multi-floor apartments', features: ['Multi-tank Control', 'Central Panel', 'Floor-wise Control'] },
-  { _id: '15', name: 'Industrial Water Automation System', category: 'Industrial', shortDescription: 'Complete industrial water process automation', features: ['SCADA Ready', 'Multi-pump Control', 'Data Logging'] },
-  { _id: '16', name: 'Agricultural Pump Automation Controller', category: 'Agricultural', shortDescription: 'Field-ready pump automation for irrigation', features: ['Timer Control', 'GSM Alert', 'Solar Compatible'] },
-  { _id: '17', name: 'Smart IoT Water Level Controller', category: 'IoT/Smart', shortDescription: 'WiFi-enabled smart controller with app monitoring', features: ['WiFi Connected', 'Mobile App', 'Voice Control'] },
-  { _id: '18', name: 'GSM Mobile Pump Controller', category: 'IoT/Smart', shortDescription: 'Control your pump via SMS from anywhere', features: ['SMS Control', 'Status SMS', 'Any Phone'] },
+  { _id: '11', name: 'Single Phase Motor Protection Panel', category: 'Protection', shortDescription: 'Single-phase motor protection panel designed to safeguard pumps from overload and reduce the risk of unnecessary downtime.', features: ['Overload Protection', 'Volt Guard', 'IP65 Panel'] },
+  { _id: '12', name: 'Three Phase Motor Protection Panel', category: 'Protection', shortDescription: 'Industrial grade three-phase protection panel for reliable pump protection, phase reversal safety and stable operation.', features: ['3-Phase Guard', 'Phase Reversal', 'Digital Meter'] },
+  { _id: '13', name: 'Underground Sump Automation Controller', category: 'Single Phase', shortDescription: 'Automated sump controller for underground tank monitoring, overflow stop and automatic refill control.', features: ['Sump Level Control', 'Overflow Stop', 'Auto Fill'] },
+  { _id: '14', name: 'Apartment Water Automation System', category: 'Industrial', shortDescription: 'Water automation system for apartment buildings with central monitoring, multi-tank control and floor-wise management.', features: ['Multi-tank Control', 'Central Panel', 'Floor-wise Control'] },
+  { _id: '15', name: 'Industrial Water Automation System', category: 'Industrial', shortDescription: 'Complete industrial water automation system for process tanks, multi-pump control and smarter water management.', features: ['SCADA Ready', 'Multi-pump Control', 'Data Logging'] },
+  { _id: '16', name: 'Agricultural Pump Automation Controller', category: 'Agricultural', shortDescription: 'Pump automation controller for irrigation setups with scheduled control, GSM alerts and farm-friendly operation.', features: ['Timer Control', 'GSM Alert', 'Solar Compatible'] },
+  { _id: '17', name: 'Smart IoT Water Level Controller', category: 'IoT/Smart', shortDescription: 'WiFi-enabled smart water controller for mobile monitoring, app-based status checks and remote automation.', features: ['WiFi Connected', 'Mobile App', 'Voice Control'] },
+  { _id: '18', name: 'GSM Mobile Pump Controller', category: 'IoT/Smart', shortDescription: 'Remote pump controller that lets you start and stop your pump using SMS, even without internet access.', features: ['SMS Control', 'Status SMS', 'Any Phone'] },
   { _id: '19', name: 'Float Switch Water Level Controller', category: 'Accessories', shortDescription: 'Reliable float switch based level controller', features: ['Float Switch', 'Simple Setup', 'Long Life'] },
   { _id: '20', name: 'Customized Automation Solutions', category: 'Industrial', shortDescription: 'Bespoke water automation engineered for your needs', features: ['Custom Design', 'On-site Survey', 'Full Support'] }
 ];
+
+const defaultProducts = featuredProducts;
 
 const categories = ['All', 'Single Phase', 'Three Phase', 'Wireless', 'Protection', 'Industrial', 'Agricultural', 'IoT/Smart', 'Accessories'];
 
@@ -46,6 +48,7 @@ const ProductCard = ({ product, index }) => {
   return (
     <motion.div
       ref={ref}
+      id={`featured-product-${index + 1}`}
       className="product-card group"
       initial={{ opacity: 0, y: 30 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -143,7 +146,7 @@ export default function Products() {
     : products.filter(p => p.category === activeCategory);
 
   return (
-    <section id="products" className="section-py" style={{ background: '#F4FBFF' }} ref={ref}>
+    <section id="products" className="section-py" style={{ background: '#F4FBFF' }} ref={ref} aria-labelledby="products-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -153,11 +156,11 @@ export default function Products() {
           transition={{ duration: 0.6 }}
         >
           <div className="badge-water mb-4 mx-auto w-fit">Our Products</div>
-          <h2 className="section-heading mb-4">
-            Complete Range of <span style={{ color: '#0077FF' }}>Water Automation</span> Solutions
+          <h2 id="products-heading" className="section-heading mb-4">
+            Our Water Automation Products
           </h2>
           <p className="section-subheading mx-auto text-center">
-            20+ product models designed for every water management scenario — from a single home to large industrial complexes.
+            Automatic water level controllers, automatic pump controllers, wireless controllers and motor protection panels designed for every water management scenario.
           </p>
         </motion.div>
 

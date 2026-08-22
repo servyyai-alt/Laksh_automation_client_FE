@@ -11,6 +11,7 @@ export default function ProductsPage() {
         title="Water Automation Products | Laksh Automations"
         description="Explore our full range of automatic water level controllers, wireless controllers, 3-phase controllers, and motor protection systems."
         canonical="/products"
+        noindex
       />
       <div className="min-h-screen overflow-hidden pt-16">
         <Navbar />

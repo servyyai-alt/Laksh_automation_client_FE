@@ -24,7 +24,7 @@ export default function Outcomes() {
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
 
   return (
-    <section id="results" className="section-py bg-white" ref={ref}>
+    <section id="benefits" className="section-py bg-white" ref={ref} aria-labelledby="benefits-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-12"
@@ -32,9 +32,9 @@ export default function Outcomes() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
         >
-          <div className="badge-water mb-4 mx-auto w-fit">Outcomes</div>
-          <h2 className="section-heading mb-4">
-            What You Get with <span style={{ color: '#0077FF' }}>Laksh Automations</span>
+          <div className="badge-water mb-4 mx-auto w-fit">Benefits</div>
+          <h2 id="benefits-heading" className="section-heading mb-4">
+            Benefits of Automatic Water Level Controllers
           </h2>
           <p className="section-subheading mx-auto text-center">
             Our water automation solutions deliver measurable results for every application.

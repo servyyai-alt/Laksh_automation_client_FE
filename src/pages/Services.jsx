@@ -21,6 +21,7 @@ export default function Services() {
         title="Water Level Controllers & Automation Products"
         description="Explore Laksh Automations range of automatic water level controllers, wireless controllers, borewell protection systems, GSM pump controllers, and water automation solutions."
         canonical="/services"
+        noindex
         jsonLd={[
           organizationSchema(),
           websiteSchema(),

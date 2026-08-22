@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { useInView } from 'react-intersection-observer';
 import toast from 'react-hot-toast';
 import API from '../utils/api';
+import { contactDetails } from '../utils/site';
 
 const serviceOptions = [
   'Single Phase Water Level Controller',
@@ -39,7 +40,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="section-py bg-white" ref={ref}>
+    <section id="contact" className="section-py bg-white" ref={ref} aria-labelledby="contact-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-12"
@@ -48,8 +49,8 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
         >
           <div className="badge-water mb-4 mx-auto w-fit">Contact Us</div>
-          <h2 className="section-heading mb-4">
-            Get in Touch with <span style={{ color: '#0077FF' }}>Our Experts</span>
+          <h2 id="contact-heading" className="section-heading mb-4">
+            Contact Laksh Automations - Water Automation Manufacturer in Coimbatore
           </h2>
           <p className="section-subheading mx-auto text-center">
             Fill the form and our team will call you back with the best solution for your water management needs.
@@ -69,9 +70,10 @@ export default function Contact() {
               <h3 className="font-display font-bold text-xl mb-6">Contact Information</h3>
 
               {[
-                { icon: '📞', label: 'Phone', value: '+91 88075 00321', href: 'tel:+918807500321' },
-                { icon: '🌐', label: 'Website', value: 'lakshautomations.in', href: 'https://lakshautomations.in' },
-                { icon: '📍', label: 'Location', value: 'Coimbatore, Tamil Nadu, India', href: null }
+                { icon: '📞', label: 'Phone', value: contactDetails.phoneDisplay, href: `tel:${contactDetails.phone}` },
+                { icon: '✉️', label: 'Email', value: contactDetails.email, href: `mailto:${contactDetails.email}` },
+                { icon: '🌐', label: 'Website', value: 'www.lakshautomations.in', href: 'https://www.lakshautomations.in' },
+                { icon: '📍', label: 'Address', value: `${contactDetails.address.streetAddress}, ${contactDetails.address.addressLocality}, ${contactDetails.address.addressRegion} ${contactDetails.address.postalCode}`, href: null }
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-4 mb-5">
                   <div className="w-10 h-10 rounded-xl flex items-center justify-center text-lg flex-shrink-0" style={{ background: 'rgba(0,119,255,0.2)' }}>
