@@ -9,6 +9,7 @@ export default function Privacy() {
         title="Privacy Policy"
         description="Laksh Automations Privacy Policy - Learn how we collect, use, and protect your personal information."
         canonical="/privacy"
+        noindex
         jsonLd={[
           pageSchema({
             name: 'Privacy Policy',

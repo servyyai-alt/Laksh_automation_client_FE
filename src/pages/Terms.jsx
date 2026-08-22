@@ -9,6 +9,7 @@ export default function Terms() {
         title="Terms and Conditions"
         description="Terms and Conditions for Laksh Automations - Read our terms of service, warranty policy, and usage guidelines."
         canonical="/terms"
+        noindex
         jsonLd={[
           pageSchema({
             name: 'Terms and Conditions',
